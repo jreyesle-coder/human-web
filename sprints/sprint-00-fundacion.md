@@ -25,7 +25,7 @@ Diseño visual, contenido, páginas. Aquí no se construye nada que el cliente v
 - [x] **S0-09** Crear `src/styles/tokens.css` con los tokens de `docs/02-sistema-diseno.md`. Valores provisionales hasta que se resuelva P-002.
 - [x] **S0-10** Crear `.env.example` con todas las variables, sin valores.
 - [x] **S0-11** Configurar Vitest y Playwright con una prueba trivial de cada uno que pase.
-- [ ] **S0-12** CI en GitHub Actions: `pnpm check` + build en cada push. _Workflow escrito en `.github/workflows/ci.yml`; falta verlo correr en GitHub._
+- [x] **S0-12** CI en GitHub Actions: `pnpm check` + build en cada push. _En verde en GitHub Actions (2026-10-10)._
 - [ ] **S0-13** Conectar el despliegue en Vercel con preview por rama. _Requiere el repositorio en GitHub._
 - [x] **S0-14** Página `/ui` vacía, reservada para el catálogo de componentes del Sprint 1.
 
