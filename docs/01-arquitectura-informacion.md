@@ -76,6 +76,12 @@ Las políticas existentes de `humanstores.com` se migran como contenido. **No la
 | Ruta | Uso |
 |---|---|
 | `/ui` | Catálogo de componentes del sistema de diseño (Sprint 1). `noindex` y bloqueada en `robots.txt`. |
+| `/og` | Genera la imagen para compartir (Open Graph) de cada página con la marca. |
+| `/entrenar/clase-de-prueba/gracias` | Agradecimiento tras solicitar la clase de prueba (Sprint 4). `noindex`. |
+| `/sanar/agendar/gracias` | Agradecimiento tras agendar la evaluación (Sprint 5). `noindex`. |
+| `/api/leads/*` | Recepción de formularios (Sprints 3 a 5). |
+
+Las páginas de motivo viven en `/sanar/motivos/[motivo]` sin índice propio: el índice es el selector de `/sanar`. Las migas de pan saltan ese tramo.
 
 ## Navegación principal
 

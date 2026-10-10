@@ -133,6 +133,18 @@ Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight 
 
 ---
 
+## D-011 · Contenido cacheado por build y rutas nunca vacías
+
+**Contexto.** Con Cache Components, leer archivos durante el prerender cuenta como dato no cacheado y rompe el build. Además, toda ruta dinámica debe generar al menos un parámetro.
+
+**Decisión.** El cargador de `src/lib/content` usa `"use cache"`: el contenido solo cambia con un despliegue. Si una colección no tiene nada visible (por ejemplo, historias sin autorización), `slugsDe()` devuelve el slug `sin-contenido`, que responde 404.
+
+**Alternativas.** `export const instant = false` en cada ruta (renderizado bloqueante, más lento para el visitante).
+
+**Consecuencias.** Las páginas de contenido se sirven estáticas. Un MDX nuevo exige un despliegue, igual que ya establecía D-004.
+
+---
+
 ## Pendientes — bloquean el arranque
 
 Estas tres se cierran en el Sprint 0. No las resuelvas por tu cuenta.

@@ -41,6 +41,86 @@ Se llena con la salida de `pnpm pendientes` al cerrar el Sprint 2. Es la causa m
 |---|---|---|
 | B-005 | Store API responde 200 con 46 productos (S0-01). D-003 se sostiene. | 2026-10-10 |
 
+### Pendientes en el sitio
+
+<!-- pendientes:inicio -->
+_Generado con `pnpm pendientes --backlog`. No editar a mano._
+
+| Ruta | Tipo | Qué falta | Archivo |
+|---|---|---|---|
+| (componente compartido) | Imagen | foto de ${nombre} | `src/components/blocks/Cards.tsx:134` |
+| (componente compartido) | Imagen | foto autorizada de ${nombre} | `src/components/blocks/Cards.tsx:21` |
+| (componente compartido) | Imagen | retrato de ${nombre} | `src/components/blocks/Cards.tsx:50` |
+| (componente compartido) | Texto | número de WhatsApp de ${label.toLowerCase()} (variable de entorno) | `src/components/blocks/ContactStrip.tsx:43` |
+| (componente compartido) | Texto | horarios de Human Balance, consultorio y tienda | `src/components/blocks/ContactStrip.tsx:70` |
+| (componente compartido) | Texto | horarios de atención por unidad | `src/components/blocks/Footer.tsx:37` |
+| (componente compartido) | Texto | enlaces oficiales a redes sociales | `src/components/blocks/Footer.tsx:67` |
+| / | Texto | promesa de portada aprobada por Juan Carlos Simó | `src/app/(marca)/page.tsx:6` |
+| /aviso-legal | Texto | aviso legal vigente, migrado desde humanstores.com/aviso-legal | `src/app/(legal)/aviso-legal/page.tsx:16` |
+| /contacto | Texto | formulario de contacto general (Sprint 3) | `src/app/(marca)/contacto/page.tsx:25` |
+| /contenido | Texto | artículos publicados (equipo de contenido) | `src/app/(marca)/contenido/page.tsx:25` |
+| /contenido/articulo-ejemplo | Texto | artículos reales para la sección de contenido (Juan Carlos Simó / equipo de contenido) | `content/contenido/articulo-ejemplo.mdx:9` |
+| /entrenar | Texto | propuesta de Human Balance y fotografía de entrenamiento (cliente) | `src/app/entrenar/page.tsx:28` |
+| /entrenar/clase-de-prueba | Texto | formulario de clase de prueba (Sprint 4) | `src/app/entrenar/clase-de-prueba/page.tsx:26` |
+| /entrenar/coaches | Texto | fotografía y perfil de cada coach (cliente) | `src/app/entrenar/coaches/page.tsx:27` |
+| /entrenar/coaches/coach-ejemplo | Imagen | retrato del coach | `content/coaches/coach-ejemplo.mdx:10` |
+| /entrenar/coaches/coach-ejemplo | Texto | perfil de cada coach: especialidad, formación y enfoque (Human Balance) | `content/coaches/coach-ejemplo.mdx:12` |
+| /entrenar/instalaciones | Texto | fotografía de instalaciones y horarios (cliente) | `src/app/entrenar/instalaciones/page.tsx:28` |
+| /entrenar/modalidades | Texto | lista de modalidades y en qué se diferencian (Human Balance) | `src/app/entrenar/modalidades/page.tsx:27` |
+| /historias | Texto | historias con autorización firmada (cliente) | `src/app/(marca)/historias/page.tsx:27` |
+| /juan-carlos-simo | Texto | trayectoria completa y fotografía oficial de Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:27` |
+| /metodo | Texto | lógica completa del método y orden de los pasos (Juan Carlos Simó) | `src/app/(marca)/metodo/page.tsx:27` |
+| /metodo/eliminar | Texto | qué se elimina y por qué: texto de Juan Carlos Simó para el paso Eliminar | `content/metodo/eliminar.mdx:11` |
+| /metodo/liberar | Texto | qué se libera: texto de Juan Carlos Simó para el paso Liberar | `content/metodo/liberar.mdx:11` |
+| /metodo/reparar | Texto | qué se repara y cómo: texto de Juan Carlos Simó para el paso Reparar | `content/metodo/reparar.mdx:11` |
+| /politica-de-entrega | Texto | política de entrega vigente, migrada desde humanstores.com/politicas-de-entrega | `src/app/(legal)/politica-de-entrega/page.tsx:16` |
+| /politica-de-reembolsos | Texto | política de reembolsos vigente, migrada desde humanstores.com/politicas-de-reembolsos | `src/app/(legal)/politica-de-reembolsos/page.tsx:16` |
+| /privacidad | Texto | aviso de privacidad vigente del cliente, migrado desde humanstores.com/politica-privacidad (revisión legal) | `src/app/(legal)/privacidad/page.tsx:17` |
+| /sanar | Texto | qué es la dietética funcional y en qué se diferencia de una consulta nutricional tradicional (Juan Carlos Simó) | `src/app/sanar/page.tsx:28` |
+| /sanar/agendar | Texto | formulario de agendamiento (Sprint 5) | `src/app/sanar/agendar/page.tsx:26` |
+| /sanar/evaluaciones | Texto | lista completa de evaluaciones disponibles (consultorio) | `src/app/sanar/evaluaciones/page.tsx:28` |
+| /sanar/evaluaciones/oligoscan | Texto | OligoScan: qué mide, en lenguaje llano (Juan Carlos Simó) | `content/evaluaciones/oligoscan.mdx:12` |
+| /sanar/evaluaciones/oligoscan | Texto | OligoScan: cómo se hace | `content/evaluaciones/oligoscan.mdx:16` |
+| /sanar/evaluaciones/oligoscan | Texto | OligoScan: duración | `content/evaluaciones/oligoscan.mdx:20` |
+| /sanar/evaluaciones/oligoscan | Texto | OligoScan: qué recibe el paciente | `content/evaluaciones/oligoscan.mdx:24` |
+| /sanar/motivos/composicion-corporal | Texto | composición corporal: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/composicion-corporal.mdx:14` |
+| /sanar/motivos/composicion-corporal | Texto | composición corporal: qué puede haber detrás | `content/motivos/composicion-corporal.mdx:18` |
+| /sanar/motivos/composicion-corporal | Texto | composición corporal: cómo se aborda en consulta | `content/motivos/composicion-corporal.mdx:22` |
+| /sanar/motivos/composicion-corporal | Texto | composición corporal: qué esperar del proceso, sin promesas de resultado | `content/motivos/composicion-corporal.mdx:26` |
+| /sanar/motivos/digestion | Texto | digestión: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/digestion.mdx:14` |
+| /sanar/motivos/digestion | Texto | digestión: qué puede haber detrás | `content/motivos/digestion.mdx:18` |
+| /sanar/motivos/digestion | Texto | digestión: cómo se aborda en consulta | `content/motivos/digestion.mdx:22` |
+| /sanar/motivos/digestion | Texto | digestión: qué esperar del proceso, sin promesas de resultado | `content/motivos/digestion.mdx:26` |
+| /sanar/motivos/fatiga | Texto | fatiga: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/fatiga.mdx:14` |
+| /sanar/motivos/fatiga | Texto | fatiga: qué puede haber detrás | `content/motivos/fatiga.mdx:18` |
+| /sanar/motivos/fatiga | Texto | fatiga: cómo se aborda en consulta | `content/motivos/fatiga.mdx:22` |
+| /sanar/motivos/fatiga | Texto | fatiga: qué esperar del proceso, sin promesas de resultado | `content/motivos/fatiga.mdx:26` |
+| /sanar/motivos/inflamacion | Texto | inflamación: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/inflamacion.mdx:14` |
+| /sanar/motivos/inflamacion | Texto | inflamación: qué puede haber detrás | `content/motivos/inflamacion.mdx:18` |
+| /sanar/motivos/inflamacion | Texto | inflamación: cómo se aborda en consulta | `content/motivos/inflamacion.mdx:22` |
+| /sanar/motivos/inflamacion | Texto | inflamación: qué esperar del proceso, sin promesas de resultado | `content/motivos/inflamacion.mdx:26` |
+| /sanar/motivos/prevencion | Texto | prevención: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/prevencion.mdx:14` |
+| /sanar/motivos/prevencion | Texto | prevención: qué puede haber detrás | `content/motivos/prevencion.mdx:18` |
+| /sanar/motivos/prevencion | Texto | prevención: cómo se aborda en consulta | `content/motivos/prevencion.mdx:22` |
+| /sanar/motivos/prevencion | Texto | prevención: qué esperar del proceso, sin promesas de resultado | `content/motivos/prevencion.mdx:26` |
+| /sanar/motivos/sueno | Texto | sueño: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/sueno.mdx:14` |
+| /sanar/motivos/sueno | Texto | sueño: qué puede haber detrás | `content/motivos/sueno.mdx:18` |
+| /sanar/motivos/sueno | Texto | sueño: cómo se aborda en consulta | `content/motivos/sueno.mdx:22` |
+| /sanar/motivos/sueno | Texto | sueño: qué esperar del proceso, sin promesas de resultado | `content/motivos/sueno.mdx:26` |
+| /sanar/primera-consulta | Texto | pasos de la primera consulta (consultorio) | `src/app/sanar/primera-consulta/page.tsx:28` |
+| /terminos | Texto | términos y condiciones vigentes del cliente (revisión legal) | `src/app/(legal)/terminos/page.tsx:16` |
+| /tienda | Texto | catálogo conectado a WooCommerce (Sprint 6) | `src/app/tienda/page.tsx:25` |
+| /tienda/carrito | Texto | carrito (Sprint 6) | `src/app/tienda/carrito/page.tsx:25` |
+| /tienda/omni | Texto | historia y respaldo de la línea OMNI (cliente) | `src/app/tienda/omni/page.tsx:24` |
+| /tienda/productos | Texto | catálogo con filtros (Sprint 6) | `src/app/tienda/productos/page.tsx:24` |
+| /tienda/protocolos | Texto | índice de protocolos (Sprint 6) | `src/app/tienda/protocolos/page.tsx:25` |
+| /tienda/protocolos/estres-y-sueno-cronico | Texto | narrativa del protocolo Estrés y Sueño Crónico: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/estres-y-sueno-cronico.mdx:12` |
+| /tienda/protocolos/fat-loss | Texto | narrativa del protocolo Fat Loss: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/fat-loss.mdx:12` |
+| /tienda/protocolos/higado | Texto | narrativa del protocolo Hígado: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/higado.mdx:12` |
+| /tienda/protocolos/inmunidad | Texto | narrativa del protocolo Inmunidad: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/inmunidad.mdx:12` |
+| /tienda/protocolos/requerimiento-diario | Texto | narrativa del protocolo Requerimiento Diario: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/requerimiento-diario.mdx:12` |
+<!-- pendientes:fin -->
+
 ## Deuda técnica declarada
 
 | ID | Deuda | Origen | Cuándo revisarla |

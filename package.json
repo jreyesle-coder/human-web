@@ -11,7 +11,8 @@
     "typecheck": "next typegen && tsc --noEmit",
     "test": "vitest run",
     "e2e": "playwright test",
-    "check": "pnpm lint && pnpm typecheck && pnpm test"
+    "check": "pnpm lint && pnpm typecheck && pnpm test",
+    "pendientes": "node scripts/pendientes.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

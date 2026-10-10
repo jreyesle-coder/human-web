@@ -15,33 +15,33 @@ Diseño final de páginas, integración con WooCommerce, formularios funcionales
 
 ### Rutas
 
-- [ ] **S2-01** Crear todas las rutas de `docs/01-arquitectura-informacion.md`, cada una con su layout y un placeholder visible.
-- [ ] **S2-02** Grupos de rutas `(marca)` y `(legal)` con sus layouts propios.
-- [ ] **S2-03** Rutas dinámicas con `generateStaticParams`: método, motivos, evaluaciones, coaches, historias, protocolos, artículos.
-- [ ] **S2-04** Navegación principal y pie conectados a rutas reales.
-- [ ] **S2-05** Migas de pan automáticas por jerarquía de ruta.
-- [ ] **S2-06** Barra inferior fija en móvil con las tres rutas y el carrito.
+- [x] **S2-01** Crear todas las rutas de `docs/01-arquitectura-informacion.md`, cada una con su layout y un placeholder visible.
+- [x] **S2-02** Grupos de rutas `(marca)` y `(legal)` con sus layouts propios.
+- [x] **S2-03** Rutas dinámicas con `generateStaticParams`: método, motivos, evaluaciones, coaches, historias, protocolos, artículos.
+- [x] **S2-04** Navegación principal y pie conectados a rutas reales.
+- [x] **S2-05** Migas de pan automáticas por jerarquía de ruta.
+- [x] **S2-06** Barra inferior fija en móvil con las tres rutas y el carrito.
 
 ### Modelo de contenido
 
-- [ ] **S2-07** Esquemas Zod del frontmatter de cada tipo de contenido. Frontmatter inválido rompe el build.
-- [ ] **S2-08** Cargador de contenido con tipos inferidos desde los esquemas.
-- [ ] **S2-09** Un archivo MDX de ejemplo por tipo, con `status: draft`, para validar el renderizado.
-- [ ] **S2-10** Componentes MDX: encabezados, listas, citas, tablas, imágenes, llamados y bloque de advertencia.
+- [x] **S2-07** Esquemas Zod del frontmatter de cada tipo de contenido. Frontmatter inválido rompe el build.
+- [x] **S2-08** Cargador de contenido con tipos inferidos desde los esquemas.
+- [x] **S2-09** Un archivo MDX de ejemplo por tipo, con `status: draft`, para validar el renderizado.
+- [x] **S2-10** Componentes MDX: encabezados, listas, citas, tablas, imágenes, llamados y bloque de advertencia.
 
 ### SEO base
 
-- [ ] **S2-11** `generateMetadata` en toda ruta, con título y descripción propios.
-- [ ] **S2-12** Imágenes Open Graph generadas dinámicamente con la marca.
-- [ ] **S2-13** Datos estructurados: `Organization` y `LocalBusiness` en el layout raíz, `Person` en la página de Juan Carlos Simó.
-- [ ] **S2-14** Sitemap alimentado desde las rutas reales y el contenido publicado.
-- [ ] **S2-15** URLs canónicas en todas las páginas.
+- [x] **S2-11** `generateMetadata` en toda ruta, con título y descripción propios.
+- [x] **S2-12** Imágenes Open Graph generadas dinámicamente con la marca.
+- [ ] **S2-13** Datos estructurados: `Organization` y `LocalBusiness` en el layout raíz, `Person` en la página de Juan Carlos Simó. _Organization y LocalBusiness listos en el layout raíz; Person se agrega con la página de Juan Carlos Simó en el Sprint 3._
+- [x] **S2-14** Sitemap alimentado desde las rutas reales y el contenido publicado.
+- [x] **S2-15** URLs canónicas en todas las páginas.
 
 ### Instrumentación de placeholders
 
-- [ ] **S2-16** Componente `Pendiente` que renderiza `{{PENDIENTE: ...}}` de forma visible en desarrollo y preview, y **rompe el build en producción**.
-- [ ] **S2-17** Script `pnpm pendientes` que recorre el repositorio y lista todo lo pendiente con su ruta. Exportar a `backlog.md`.
-- [ ] **S2-18** Generar el inventario de contenido faltante y entregarlo al cliente como lista de materiales a producir, con responsable y fecha.
+- [x] **S2-16** Componente `Pendiente` que renderiza `{{PENDIENTE: ...}}` de forma visible en desarrollo y preview, y **rompe el build en producción**.
+- [x] **S2-17** Script `pnpm pendientes` que recorre el repositorio y lista todo lo pendiente con su ruta. Exportar a `backlog.md`.
+- [ ] **S2-18** Generar el inventario de contenido faltante y entregarlo al cliente como lista de materiales a producir, con responsable y fecha. _La lista de materiales se genera al cierre de la corrida (Sprint 6), cuando los pendientes técnicos ya estén resueltos y solo quede lo del cliente._
 
 ## Criterios de aceptación
 
