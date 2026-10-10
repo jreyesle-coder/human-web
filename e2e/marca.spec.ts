@@ -38,3 +38,26 @@ test("la página de Juan Carlos Simó publica datos estructurados Person", async
   );
   expect(datos.some((d) => d["@type"] === "Person")).toBe(true);
 });
+
+test("la portada abre con el video de Juan Carlos Simó y carga el reproductor al pulsar", async ({
+  page,
+}) => {
+  await page.goto("/");
+  const boton = page.getByRole("button", { name: /Reproducir el video/ }).first();
+  await expect(boton).toBeVisible();
+  // Antes de pulsar no hay reproductor de YouTube en la página.
+  await expect(page.locator("iframe")).toHaveCount(0);
+  await boton.click();
+  await expect(page.locator('iframe[src*="youtube-nocookie.com/embed/"]')).toHaveCount(1);
+});
+
+test("la foto oficial de Juan Carlos Simó aparece en la portada y en su página", async ({
+  page,
+}) => {
+  for (const ruta of ["/", "/juan-carlos-simo"]) {
+    await page.goto(ruta);
+    const foto = page.getByRole("img", { name: /Juan Carlos Simó/ }).first();
+    await expect(foto).toBeVisible();
+    expect(await foto.evaluate((img: HTMLImageElement) => img.naturalWidth)).toBeGreaterThan(0);
+  }
+});

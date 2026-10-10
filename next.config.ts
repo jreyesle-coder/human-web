@@ -14,6 +14,8 @@ const nextConfig: NextConfig = {
       { protocol: "https", hostname: "i1.wp.com", pathname: "/humanstores.com/**" },
       { protocol: "https", hostname: "i2.wp.com", pathname: "/humanstores.com/**" },
       { protocol: "https", hostname: "i3.wp.com", pathname: "/humanstores.com/**" },
+      // Miniaturas de los videos de YouTube (se muestran antes de cargar el reproductor).
+      { protocol: "https", hostname: "i.ytimg.com", pathname: "/vi/**" },
     ],
   },
   turbopack: {

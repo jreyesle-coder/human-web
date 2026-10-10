@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { VideoLite } from "@/components/blocks/VideoLite";
+import { FOTO_SIMO, VIDEO_PORTADA } from "@/lib/simo";
 import { StoryCard } from "@/components/blocks/Cards";
 import { ContactStrip } from "@/components/blocks/ContactStrip";
 import { Hero } from "@/components/blocks/Hero";
@@ -40,16 +43,28 @@ export default async function Home() {
           <>
             <Pendiente texto="promesa de portada aprobada por Juan Carlos Simó: a quién sirve y qué resuelve, en una frase" />
             <p className="mt-4">
-              Escoge por dónde empezar. Las tres puertas llevan al mismo recorrido.
+              Juan Carlos Simó explica el método en su podcast. Después, escoge por dónde empezar:
+              las tres puertas llevan al mismo recorrido.
             </p>
           </>
         }
-      >
-        {/* S3-02: las tres rutas son la decisión principal, visibles al primer scroll en móvil. */}
-        <div className="mt-8">
+        media={
+          <VideoLite
+            id={VIDEO_PORTADA.id}
+            titulo={VIDEO_PORTADA.titulo}
+            duracion={VIDEO_PORTADA.duracion}
+            nota={VIDEO_PORTADA.nota}
+            prioridad
+          />
+        }
+      />
+
+      {/* S3-02: las tres rutas son la decisión principal, visibles al primer scroll en móvil. */}
+      <div className="bg-bone">
+        <div className="mx-auto w-full max-w-content px-gutter pb-12 lg:pb-20">
           <RouteCards />
         </div>
-      </Hero>
+      </div>
 
       <Section
         tone="surface"
@@ -91,7 +106,15 @@ export default async function Home() {
       </Section>
 
       <Section tone="ink">
-        <div className="grid gap-8 lg:grid-cols-[2fr_3fr] lg:items-center">
+        <div className="grid gap-8 md:grid-cols-[1fr_2fr] lg:grid-cols-[1fr_1fr_1fr] lg:items-center">
+          <Image
+            src={FOTO_SIMO.src}
+            alt={FOTO_SIMO.alt}
+            width={FOTO_SIMO.width}
+            height={FOTO_SIMO.height}
+            sizes="(min-width: 1024px) 33vw, (min-width: 768px) 33vw, 100vw"
+            className="h-auto w-full max-w-sm rounded-lg"
+          />
           <div>
             <p className="text-small font-semibold tracking-widest uppercase">Fundador</p>
             <h2 className="mt-2 font-display text-h2 font-bold">Juan Carlos Simó</h2>

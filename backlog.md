@@ -35,7 +35,7 @@ Se llena con la salida de `pnpm pendientes` al cerrar el Sprint 2. Es la causa m
 | Logotipo oficial en vector (SVG) | Imagen | Cliente | — | Pendiente |
 | Horarios por unidad | Texto | Cliente | — | Pendiente |
 | Números de WhatsApp por unidad | Datos | Cliente | — | Pendiente |
-| Enlaces oficiales de redes sociales | Datos | Cliente | — | Pendiente |
+| Enlaces oficiales de redes sociales | Datos | Cliente | — | Resuelto (Instagram, YouTube, Facebook); el YouTube del sitio actual está roto |
 
 ## Bloqueos resueltos
 
@@ -55,13 +55,11 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | (componente compartido) | Imagen | retrato de ${nombre} | `src/components/blocks/Cards.tsx:50` |
 | (componente compartido) | Texto | número de WhatsApp de ${label.toLowerCase()} (variable de entorno) | `src/components/blocks/ContactStrip.tsx:43` |
 | (componente compartido) | Texto | horarios de Human Balance, consultorio y tienda | `src/components/blocks/ContactStrip.tsx:70` |
-| (componente compartido) | Texto | horarios de atención por unidad | `src/components/blocks/Footer.tsx:37` |
-| (componente compartido) | Texto | enlaces oficiales a redes sociales | `src/components/blocks/Footer.tsx:67` |
-| / | Texto | promesa de portada aprobada por Juan Carlos Simó: a quién sirve y qué resuelve, en una frase | `src/app/(marca)/page.tsx:41` |
-| / | Texto | historias con resultados concretos y autorización firmada (cliente) | `src/app/(marca)/page.tsx:89` |
+| (componente compartido) | Texto | horarios de atención por unidad | `src/components/blocks/Footer.tsx:38` |
+| / | Texto | historias con resultados concretos y autorización firmada (cliente) | `src/app/(marca)/page.tsx:104` |
+| / | Texto | promesa de portada aprobada por Juan Carlos Simó: a quién sirve y qué resuelve, en una frase | `src/app/(marca)/page.tsx:44` |
 | /aviso-legal | Texto | aviso legal vigente, migrado desde humanstores.com/aviso-legal | `src/app/(legal)/aviso-legal/page.tsx:16` |
-| /contenido | Texto | artículos publicados (Juan Carlos Simó / equipo de contenido) | `src/app/(marca)/contenido/page.tsx:28` |
-| /contenido | Texto | enlace al canal oficial de video (cliente) | `src/app/(marca)/contenido/page.tsx:86` |
+| /contenido | Texto | artículos publicados (Juan Carlos Simó / equipo de contenido) | `src/app/(marca)/contenido/page.tsx:31` |
 | /contenido/articulo-ejemplo | Texto | artículos reales para la sección de contenido (Juan Carlos Simó / equipo de contenido) | `content/contenido/articulo-ejemplo.mdx:9` |
 | /entrenar | Imagen | fotografía de entrenamiento en Human Balance | `src/app/entrenar/page.tsx:66` |
 | /entrenar | Texto | propuesta de Human Balance en palabras del equipo, validada por Juan Carlos Simó | `src/app/entrenar/page.tsx:87` |
@@ -76,9 +74,8 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /entrenar/instalaciones | Texto | dirección exacta con número y referencia | `src/app/entrenar/instalaciones/page.tsx:53` |
 | /entrenar/modalidades | Texto | lista de modalidades de Human Balance con nombre y descripción (Human Balance) | `src/app/entrenar/modalidades/page.tsx:35` |
 | /historias | Texto | historias con autorización firmada: punto de partida, proceso y resultado (cliente) | `src/app/(marca)/historias/page.tsx:41` |
-| /juan-carlos-simo | Texto | enlaces oficiales a la cobertura del libro (Diario Libre, Listín Diario, El Caribe, Hoy) y a podcasts (cliente) | `src/app/(marca)/juan-carlos-simo/page.tsx:115` |
-| /juan-carlos-simo | Imagen | fotografía oficial de Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:57` |
-| /juan-carlos-simo | Texto | trayectoria completa con fechas e instituciones, verificada por Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:75` |
+| /juan-carlos-simo | Texto | enlaces a la cobertura del libro en Diario Libre, Listín Diario, El Caribe y Hoy (cliente) | `src/app/(marca)/juan-carlos-simo/page.tsx:169` |
+| /juan-carlos-simo | Texto | trayectoria con fechas e instituciones (años de práctica, títulos y dónde los obtuvo), verificada por Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:96` |
 | /metodo | Texto | lógica completa del método y criterios para pasar de un paso al siguiente (Juan Carlos Simó) | `src/app/(marca)/metodo/page.tsx:47` |
 | /metodo/eliminar | Texto | qué se elimina y por qué: texto de Juan Carlos Simó para el paso Eliminar | `content/metodo/eliminar.mdx:11` |
 | /metodo/liberar | Texto | qué se libera: texto de Juan Carlos Simó para el paso Liberar | `content/metodo/liberar.mdx:11` |

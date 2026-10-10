@@ -2,6 +2,7 @@ import Link from "next/link";
 import { Pendiente } from "@/components/ui/Pendiente";
 import { ALCANCE_VENTAS, UBICACION } from "@/lib/marca";
 import { NAV_PIE } from "@/lib/navegacion";
+import { REDES } from "@/lib/simo";
 import { WhatsappLinks } from "./ContactStrip";
 import { Logo } from "./Logo";
 
@@ -64,11 +65,16 @@ export function Footer() {
         </div>
         <div className="mt-10 grid gap-3 border-t border-bone/20 pt-6 text-small text-bone/90">
           <p>Pago seguro procesado por AZUL. {ALCANCE_VENTAS}</p>
-          <Pendiente
-            as="linea"
-            texto="enlaces oficiales a redes sociales"
-            className="bg-transparent text-bone"
-          />
+          <ul className="flex flex-wrap gap-x-4">
+            {REDES.map((r) => (
+              <li key={r.url}>
+                <a href={r.url} target="_blank" rel="noopener noreferrer" className={enlace}>
+                  {r.red} {r.usuario}
+                  <span className="sr-only"> (abre en otra ventana)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
           <p className="text-micro">
             © {2026} Human Performance Center. Santo Domingo, República Dominicana.
           </p>

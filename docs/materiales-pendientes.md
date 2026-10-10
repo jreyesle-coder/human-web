@@ -14,14 +14,14 @@ Responsables sugeridos: **JCS** = Juan Carlos Simó · **HB** = equipo de Human 
 | 2 | Lógica completa del método y criterios para pasar de un paso al siguiente | `/metodo` | JCS | | |
 | 3 | Texto de cada paso: Eliminar, Reparar, Liberar | `/metodo/*` | JCS | | |
 | 4 | Trayectoria completa con fechas e instituciones | `/juan-carlos-simo` | JCS | | |
-| 5 | Enlaces oficiales a la cobertura del libro (Diario Libre, Listín Diario, El Caribe, Hoy) y a podcasts | `/juan-carlos-simo` | JCS | | |
-| 6 | Artículos para la sección de contenido y enlace al canal de video | `/contenido` | JCS | | |
+| 5 | Enlaces a la cobertura del libro en Diario Libre, Listín Diario, El Caribe y Hoy. Los podcasts ya están (Clean Health, TWUP #45, Emprende Ahora, su canal Vida Sana) | `/juan-carlos-simo` | JCS | | |
+| 6 | Artículos para la sección de contenido. El canal de video ya está enlazado (youtube.com/@jcsimo) | `/contenido` | JCS | | |
 
 ## 2. Fotografía (ninguna de banco)
 
 | # | Pieza | Dónde se ve | Sugerido | Responsable | Fecha |
 |---|---|---|---|---|---|
-| 7 | Fotografía oficial de Juan Carlos Simó | `/juan-carlos-simo` | JCS | | |
+| 7 | ~~Fotografía oficial de Juan Carlos Simó~~ **Resuelto:** se usa el retrato publicado en la biblioteca de humanstores.com (2023). Confirmar que es la foto vigente | `/juan-carlos-simo` | JCS | | Confirmar |
 | 8 | Fotografía de entrenamiento | `/entrenar` | HB | | |
 | 9 | Instalaciones: área de entrenamiento, área de evaluación, fachada | `/entrenar/instalaciones` | HB | | |
 | 10 | Retrato de cada coach | `/entrenar/coaches` | HB | | |
@@ -71,10 +71,11 @@ Responsables sugeridos: **JCS** = Juan Carlos Simó · **HB** = equipo de Human 
 |---|---|---|---|---|---|
 | 35 | Números de WhatsApp por unidad (entrenamiento, consultorio, tienda) | Todo el sitio | Admin | | |
 | 36 | Horarios de atención por unidad | Pie y contacto | Admin | | |
-| 37 | Enlaces oficiales de redes sociales | Pie | Admin | | |
+| 37 | ~~Redes sociales~~ **Resuelto:** Instagram @jc_simo, YouTube @jcsimo y Facebook Human Performance Center. **Ojo:** el enlace a YouTube del sitio actual (`@vidasana-juancarlossimo`) está roto; el canal real es `@jcsimo` | Pie | Admin | | Confirmar |
 | 38 | Políticas vigentes para migrar: privacidad, términos, entrega, reembolsos, aviso legal | `/privacidad` y legales | Admin | | |
 | 39 | Responsable del tratamiento de datos, plazo de conservación y canal de derechos (Ley 172-13) | `/privacidad` | Admin + legal | | |
 | 40 | Frecuencia y contenido real del boletín (hoy: "Protocolos cada semana") | Portada | HS | | |
+| 45 | Aprobar el video de la portada (hoy: Ep. 28, "El estilo de vida The Simó Diet: fase 1 y fase 2") o indicar otro | Portada | JCS | | |
 
 ## 7. Accesos y decisiones (bloquean fases siguientes)
 

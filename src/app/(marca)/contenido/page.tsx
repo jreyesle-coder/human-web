@@ -9,6 +9,9 @@ import { Pendiente } from "@/components/ui/Pendiente";
 import { Skeleton } from "@/components/ui/Toast";
 import { getEntries } from "@/lib/content";
 import { metaPagina } from "@/lib/seo";
+import { PODCAST } from "@/lib/simo";
+import { VideoLite } from "@/components/blocks/VideoLite";
+import { ButtonLink } from "@/components/ui/Button";
 
 export const metadata: Metadata = metaPagina({
   title: "Contenido",
@@ -83,7 +86,31 @@ export default function ContenidoPage(props: PageProps<"/contenido">) {
         >
           <Lista searchParams={props.searchParams} />
         </Suspense>
-        <Pendiente texto="enlace al canal oficial de video (cliente)" className="mt-10" />
+        <div className="mt-12 grid gap-6 rounded-lg bg-surface p-6 md:grid-cols-[2fr_3fr] md:items-center">
+          <VideoLite
+            id={PODCAST.destacados[0]!.id}
+            titulo={PODCAST.destacados[0]!.titulo}
+            duracion={PODCAST.destacados[0]!.duracion}
+            nota={PODCAST.destacados[0]!.nota}
+          />
+          <div>
+            <h2 className="font-display text-h3 font-bold">{PODCAST.nombre}</h2>
+            <p className="mt-2">
+              Más de {PODCAST.episodios} episodios en video sobre alimentación, metabolismo y
+              entrenamiento.
+            </p>
+            <ButtonLink
+              href={PODCAST.canal}
+              variant="secondary"
+              className="mt-4"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ir al canal de YouTube
+              <span className="sr-only"> (abre en otra ventana)</span>
+            </ButtonLink>
+          </div>
+        </div>
       </Section>
     </main>
   );
