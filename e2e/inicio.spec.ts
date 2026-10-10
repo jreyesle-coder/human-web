@@ -9,9 +9,7 @@ test("la portada carga con un solo h1", async ({ page }) => {
 test("una ruta inexistente muestra el 404 de la marca", async ({ page }) => {
   const res = await page.goto("/no-existe");
   expect(res?.status()).toBe(404);
-  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-    "Esta página no existe",
-  );
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("Esta página no existe");
 });
 
 test("robots.txt y sitemap.xml responden", async ({ request }) => {

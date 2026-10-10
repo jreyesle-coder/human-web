@@ -10,6 +10,8 @@ La identidad visible de la marca hoy es monocroma: el logotipo que usa el sitio 
 
 ## Tokens de color
 
+> **Actualizado en el Sprint 1.** Los valores vigentes están en `src/styles/tokens.css`. Cambios respecto a esta propuesta: ámbar `#965821` y piedra `#5F5F5F` por contraste (D-009), más tonos suaves de apoyo (`functional-soft`, `mist`, `*-soft` de estado). Tipografías elegidas: Archivo + Source Sans 3 (D-010).
+
 ```css
 :root {
   /* Base de marca */

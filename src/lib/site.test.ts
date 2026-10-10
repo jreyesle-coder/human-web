@@ -1,22 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { isProduction, siteUrl } from "./site";
 
-const env = (vars: Record<string, string>) =>
-  vars as unknown as NodeJS.ProcessEnv;
+const env = (vars: Record<string, string>) => vars as unknown as NodeJS.ProcessEnv;
 
 describe("isProduction", () => {
-  it("en Vercel solo cuenta el despliegue de producción", () => {
-    expect(
-      isProduction(env({ VERCEL_ENV: "production", NODE_ENV: "production" })),
-    ).toBe(true);
-    expect(
-      isProduction(env({ VERCEL_ENV: "preview", NODE_ENV: "production" })),
-    ).toBe(false);
+  it("solo es producción con HUMAN_LANZAMIENTO=si", () => {
+    expect(isProduction(env({ HUMAN_LANZAMIENTO: "si" }))).toBe(true);
   });
 
-  it("fuera de Vercel usa NODE_ENV", () => {
-    expect(isProduction(env({ NODE_ENV: "production" }))).toBe(true);
-    expect(isProduction(env({ NODE_ENV: "development" }))).toBe(false);
+  it("un despliegue de Vercel sin la bandera es de presentación", () => {
+    expect(isProduction(env({ VERCEL_ENV: "production", NODE_ENV: "production" }))).toBe(false);
+    expect(isProduction(env({ NODE_ENV: "production" }))).toBe(false);
   });
 });
 
@@ -32,12 +26,8 @@ describe("siteUrl", () => {
       VERCEL_PROJECT_PRODUCTION_URL: "human.vercel.app",
       VERCEL_URL: "human-abc.vercel.app",
     };
-    expect(siteUrl(env({ ...vercel, VERCEL_ENV: "production" }))).toBe(
-      "https://human.vercel.app",
-    );
-    expect(siteUrl(env({ ...vercel, VERCEL_ENV: "preview" }))).toBe(
-      "https://human-abc.vercel.app",
-    );
+    expect(siteUrl(env({ ...vercel, VERCEL_ENV: "production" }))).toBe("https://human.vercel.app");
+    expect(siteUrl(env({ ...vercel, VERCEL_ENV: "preview" }))).toBe("https://human-abc.vercel.app");
   });
 
   it("en local cae a localhost", () => {

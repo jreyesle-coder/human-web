@@ -91,8 +91,45 @@ Cada decisión técnica de peso se registra aquí. Formato: contexto, decisión,
 | `prettier`, `prettier-plugin-tailwindcss`, `eslint-config-prettier` | Formato | S0-07; el plugin ordena clases de Tailwind |
 | `vitest`, `@vitejs/plugin-react`, `jsdom`, `@testing-library/react`, `@testing-library/dom` | Pruebas unitarias | S0-11; jsdom solo en pruebas de componentes |
 | `@playwright/test` | Pruebas de extremo a extremo | S0-11; corre en móvil (Pixel 7) y escritorio |
+| `@axe-core/playwright` | Auditoría de accesibilidad automatizada | S1-20; corre en CI sobre las rutas clave |
 
 Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight para títulos e Inter para texto, ambas de la lista de candidatas. La elección final es del Sprint 1.
+
+---
+
+## D-008 · El sitio solo es "producción" cuando se lanza
+
+**Contexto.** El despliegue de producción de Vercel sirve hoy como sitio de presentación para el cliente. Con la regla original (producción = Vercel production), ese despliegue ocultaría los borradores y, desde S2-16, un `{{PENDIENTE}}` rompería el build.
+
+**Decisión.** `isProduction()` es verdadero solo con la variable `HUMAN_LANZAMIENTO=si`. Sin ella, cualquier despliegue es de presentación: muestra borradores y pendientes, `robots.txt` bloquea todo y las páginas llevan `noindex`.
+
+**Alternativas.** Usar `VERCEL_ENV` (obliga a trabajar en ramas para mostrar avances y deja vacía la URL principal); una bandera inversa de "demo" (si se olvida en el lanzamiento, se publicarían borradores).
+
+**Consecuencias.** El día del lanzamiento hay que definir `HUMAN_LANZAMIENTO=si` en Vercel (Sprint 8). Si se olvida, el sitio sigue sin indexarse: es el error seguro.
+
+---
+
+## D-009 · Ámbar oscurecido para cumplir AA
+
+**Contexto.** El ámbar propuesto `#B06B2C` da 4,21:1 con texto blanco y 3,74:1 sobre hueso. No cumple AA (4,5:1), y el ámbar es el color de todos los llamados a la acción.
+
+**Decisión.** `--color-amber: #965821` (5,65:1 con blanco; 5,02:1 sobre hueso) y `--color-amber-strong: #7A4719` para hover. Mismo tono, más profundo. `--color-stone` pasa de `#6B6B6B` a `#5F5F5F` para cumplir también sobre `mist`.
+
+**Alternativas.** Texto negro sobre ámbar (cumple, pero el botón pierde fuerza); ámbar solo en texto grande (no sirve para botones de 16 px).
+
+**Consecuencias.** `scripts/contraste.mjs` verifica 26 pares en cada build y en las pruebas. Si P-002 trae otra paleta, el build dirá qué pares no cumplen.
+
+---
+
+## D-010 · Tipografías: Archivo + Source Sans 3
+
+**Contexto.** S1-03 pide elegir una display (Archivo, Söhne, Neue Haas Grotesk, Inter Tight) y una de texto (Inter, Source Sans 3, IBM Plex Sans).
+
+**Decisión.** **Archivo** para títulos (500–800) y **Source Sans 3** para texto (400 y 600), servidas por `next/font` sin dependencia nueva.
+
+**Alternativas.** Söhne y Neue Haas son de pago. Inter Tight + Inter quedaban demasiado parecidas entre sí. Source Sans 3 es humanista, como pide el sistema, y rinde bien a 16 px.
+
+**Consecuencias.** El subset `latin` cubre tildes y ñ en todos los pesos (verificado en `/ui`). Si el manual de identidad (P-002) define otras tipografías, se cambian en `src/app/layout.tsx`.
 
 ---
 

@@ -7,12 +7,8 @@ type ErrorScreenProps = {
 export function ErrorScreen({ onRetry }: ErrorScreenProps) {
   return (
     <main className="mx-auto w-full max-w-content flex-1 px-gutter py-16">
-      <p className="text-small font-semibold tracking-widest text-stone uppercase">
-        Error 500
-      </p>
-      <h1 className="mt-2 font-display text-h1 font-bold">
-        Algo salió mal de nuestro lado
-      </h1>
+      <p className="text-small font-semibold tracking-widest text-stone uppercase">Error 500</p>
+      <h1 className="mt-2 font-display text-h1 font-bold">Algo salió mal de nuestro lado</h1>
       <p className="mt-4 max-w-reading text-body">
         No es algo que hayas hecho tú. Intenta de nuevo en unos segundos.
       </p>

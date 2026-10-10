@@ -95,6 +95,7 @@ sprints/                    # plan de trabajo
 
 ## Estado actual
 
-- Sprint activo: **S0**
+- Sprint activo: **S2** — corrida continua S1 a S6 acordada con Julio (2026-10-10). S0 cerrado salvo S0-05 (accesos del cliente).
+- El despliegue de Vercel es el sitio de presentación: sin `HUMAN_LANZAMIENTO=si` muestra borradores y pendientes (D-008).
 - Sitio heredado: `humanstores.com` — WordPress + WooCommerce con tema comercial, implementación sin terminar. No se toca hasta el Sprint 7.
 - Decisiones de cliente pendientes: ver `docs/03-stack-y-decisiones.md`, sección "Pendientes".

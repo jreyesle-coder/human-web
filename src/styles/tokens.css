@@ -1,11 +1,14 @@
 /*
  * Fuente única de color, tipografía y espaciado. Ver docs/02-sistema-diseno.md.
- * Valores provisionales hasta resolver P-002 (manual de identidad).
+ * Paleta propuesta (P-002 abierto): si llega un manual de identidad, se cambia solo aquí.
+ * scripts/contraste.mjs verifica estos valores en cada build.
  */
 
 @theme {
   /* Solo existen los colores de marca: la paleta por defecto de Tailwind queda fuera. */
   --color-*: initial;
+  --color-transparent: transparent;
+  --color-current: currentColor;
 
   /* Base de marca */
   --color-ink: #101010;
@@ -14,20 +17,39 @@
 
   /* Acentos */
   --color-functional: #1c5d4c;
-  --color-amber: #b06b2c;
+  --color-functional-soft: #e3ece8;
+  /* Oscurecido desde #B06B2C para cumplir AA con texto blanco y sobre hueso (D-009). */
+  --color-amber: #965821;
+  --color-amber-strong: #7a4719;
 
   /* Soporte */
-  --color-stone: #6b6b6b;
+  --color-stone: #5f5f5f;
   --color-line: #d9d4cc;
+  --color-line-strong: #8a8378;
+  --color-mist: #e9e5de;
 
   /* Estados */
   --color-error: #b42318;
+  --color-error-soft: #fdecea;
   --color-success: #067647;
+  --color-success-soft: #e6f4ec;
   --color-warning: #b54708;
+  --color-warning-soft: #fdf1e7;
+
+  /* Radios */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Sombras: sutiles, solo para superficies que flotan (panel, diálogo, aviso). */
+  --shadow-card: 0 1px 2px rgb(16 16 16 / 0.06), 0 1px 1px rgb(16 16 16 / 0.04);
+  --shadow-float: 0 12px 32px rgb(16 16 16 / 0.16), 0 2px 6px rgb(16 16 16 / 0.08);
 
   /* Anchos */
   --container-content: 1200px;
   --container-reading: 68ch;
+  --container-form: 36rem;
 
   /* Movimiento */
   --ease-out: cubic-bezier(0.2, 0, 0, 1);
@@ -47,6 +69,7 @@
 
   --gutter: 1rem; /* 16px fijo en móvil */
   --tap-min: 2.75rem; /* 44px */
+  --bottom-bar: 4rem; /* barra inferior fija en móvil */
 }
 
 @media (min-width: 1024px) {
@@ -56,12 +79,13 @@
     --fs-h2: 2rem; /* 32 */
     --fs-h3: 1.5rem; /* 24 */
     --fs-body: 1.0625rem; /* 17 */
+    --gutter: 2rem;
   }
 }
 
 @theme inline {
-  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-archivo), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-source-sans), ui-sans-serif, system-ui, sans-serif;
 
   --text-display: var(--fs-display);
   --text-display--line-height: 1.05;
@@ -80,4 +104,5 @@
 
   --spacing-gutter: var(--gutter);
   --spacing-tap: var(--tap-min);
+  --spacing-bottom-bar: var(--bottom-bar);
 }

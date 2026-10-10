@@ -25,9 +25,7 @@ export async function getEntries<C extends Collection>(
   { root = DEFAULT_ROOT, production = isProduction() }: LoadOptions = {},
 ): Promise<Entry<C>[]> {
   const dir = path.join(root, collection);
-  const files = (await readdir(dir).catch(() => [] as string[])).filter((f) =>
-    f.endsWith(".mdx"),
-  );
+  const files = (await readdir(dir).catch(() => [] as string[])).filter((f) => f.endsWith(".mdx"));
 
   const entries = await Promise.all(
     files.map(async (file) => {
@@ -48,9 +46,7 @@ export async function getEntries<C extends Collection>(
 
   return entries
     .filter((e) => isVisible(e.frontmatter.status, production))
-    .filter(
-      (e) => collection !== "historias" || isStoryAuthorized(e.frontmatter),
-    )
+    .filter((e) => collection !== "historias" || isStoryAuthorized(e.frontmatter))
     .sort((a, b) => a.slug.localeCompare(b.slug));
 }
 

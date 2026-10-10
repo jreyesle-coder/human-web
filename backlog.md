@@ -30,6 +30,10 @@ Se llena con la salida de `pnpm pendientes` al cerrar el Sprint 2. Es la causa m
 | Dosis y duración por producto | Datos | Cliente | — | Pendiente |
 | Certificaciones y respaldo de productos | Documentos | Cliente | — | Pendiente |
 | Políticas legales vigentes | Texto | Cliente | — | Pendiente |
+| Logotipo oficial en vector (SVG) | Imagen | Cliente | — | Pendiente |
+| Horarios por unidad | Texto | Cliente | — | Pendiente |
+| Números de WhatsApp por unidad | Datos | Cliente | — | Pendiente |
+| Enlaces oficiales de redes sociales | Datos | Cliente | — | Pendiente |
 
 ## Bloqueos resueltos
 
