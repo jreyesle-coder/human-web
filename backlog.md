@@ -55,10 +55,12 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | (componente compartido) | Texto | horarios de Human Balance, consultorio y tienda | `src/components/blocks/ContactStrip.tsx:70` |
 | (componente compartido) | Texto | horarios de atención por unidad | `src/components/blocks/Footer.tsx:37` |
 | (componente compartido) | Texto | enlaces oficiales a redes sociales | `src/components/blocks/Footer.tsx:67` |
-| / | Texto | promesa de portada aprobada por Juan Carlos Simó | `src/app/(marca)/page.tsx:6` |
+| / | Texto | frecuencia y contenido del boletín (cliente) | `src/app/(marca)/page.tsx:123` |
+| / | Texto | promesa de portada aprobada por Juan Carlos Simó: a quién sirve y qué resuelve, en una frase | `src/app/(marca)/page.tsx:41` |
+| / | Texto | historias con resultados concretos y autorización firmada (cliente) | `src/app/(marca)/page.tsx:89` |
 | /aviso-legal | Texto | aviso legal vigente, migrado desde humanstores.com/aviso-legal | `src/app/(legal)/aviso-legal/page.tsx:16` |
-| /contacto | Texto | formulario de contacto general (Sprint 3) | `src/app/(marca)/contacto/page.tsx:25` |
-| /contenido | Texto | artículos publicados (equipo de contenido) | `src/app/(marca)/contenido/page.tsx:25` |
+| /contenido | Texto | artículos publicados (Juan Carlos Simó / equipo de contenido) | `src/app/(marca)/contenido/page.tsx:28` |
+| /contenido | Texto | enlace al canal oficial de video (cliente) | `src/app/(marca)/contenido/page.tsx:86` |
 | /contenido/articulo-ejemplo | Texto | artículos reales para la sección de contenido (Juan Carlos Simó / equipo de contenido) | `content/contenido/articulo-ejemplo.mdx:9` |
 | /entrenar | Texto | propuesta de Human Balance y fotografía de entrenamiento (cliente) | `src/app/entrenar/page.tsx:28` |
 | /entrenar/clase-de-prueba | Texto | formulario de clase de prueba (Sprint 4) | `src/app/entrenar/clase-de-prueba/page.tsx:26` |
@@ -67,9 +69,11 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /entrenar/coaches/coach-ejemplo | Texto | perfil de cada coach: especialidad, formación y enfoque (Human Balance) | `content/coaches/coach-ejemplo.mdx:12` |
 | /entrenar/instalaciones | Texto | fotografía de instalaciones y horarios (cliente) | `src/app/entrenar/instalaciones/page.tsx:28` |
 | /entrenar/modalidades | Texto | lista de modalidades y en qué se diferencian (Human Balance) | `src/app/entrenar/modalidades/page.tsx:27` |
-| /historias | Texto | historias con autorización firmada (cliente) | `src/app/(marca)/historias/page.tsx:27` |
-| /juan-carlos-simo | Texto | trayectoria completa y fotografía oficial de Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:27` |
-| /metodo | Texto | lógica completa del método y orden de los pasos (Juan Carlos Simó) | `src/app/(marca)/metodo/page.tsx:27` |
+| /historias | Texto | historias con autorización firmada: punto de partida, proceso y resultado (cliente) | `src/app/(marca)/historias/page.tsx:41` |
+| /juan-carlos-simo | Texto | enlaces oficiales a la cobertura del libro (Diario Libre, Listín Diario, El Caribe, Hoy) y a podcasts (cliente) | `src/app/(marca)/juan-carlos-simo/page.tsx:115` |
+| /juan-carlos-simo | Imagen | fotografía oficial de Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:57` |
+| /juan-carlos-simo | Texto | trayectoria completa con fechas e instituciones, verificada por Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:75` |
+| /metodo | Texto | lógica completa del método y criterios para pasar de un paso al siguiente (Juan Carlos Simó) | `src/app/(marca)/metodo/page.tsx:47` |
 | /metodo/eliminar | Texto | qué se elimina y por qué: texto de Juan Carlos Simó para el paso Eliminar | `content/metodo/eliminar.mdx:11` |
 | /metodo/liberar | Texto | qué se libera: texto de Juan Carlos Simó para el paso Liberar | `content/metodo/liberar.mdx:11` |
 | /metodo/reparar | Texto | qué se repara y cómo: texto de Juan Carlos Simó para el paso Reparar | `content/metodo/reparar.mdx:11` |

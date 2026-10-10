@@ -143,6 +143,8 @@ Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight 
 
 **Consecuencias.** Las páginas de contenido se sirven estáticas. Un MDX nuevo exige un despliegue, igual que ya establecía D-004.
 
+**Ajuste (Sprint 3).** Se desactivó `partialPrefetching`, que venía activo en el proyecto generado. Con esa opción, una URL no listada (por ejemplo, `/historias/inventada`) se servía con el esqueleto ya enviado y respondía 200 aunque mostrara la página de error: un "soft 404" que perjudica el posicionamiento. Sin ella, `notFound()` responde un 404 real. Verificado con historias, motivos, protocolos y pasos del método.
+
 ---
 
 ## Pendientes — bloquean el arranque

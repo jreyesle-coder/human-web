@@ -31,7 +31,7 @@ export function metaPagina({
 }: MetaPagina): Metadata {
   const imagen = { url: ogImage(title, seccion), width: 1200, height: 630, alt: title };
   return {
-    title,
+    title: path === "/" ? { absolute: title } : title,
     description,
     alternates: { canonical: path },
     openGraph: {

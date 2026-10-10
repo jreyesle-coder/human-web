@@ -3,7 +3,8 @@ import createMDX from "@next/mdx";
 
 const nextConfig: NextConfig = {
   cacheComponents: true,
-  partialPrefetching: true,
+  // Sin partialPrefetching: una ruta no listada se renderiza completa y notFound() responde 404 real (D-011).
+  partialPrefetching: false,
   pageExtensions: ["ts", "tsx", "md", "mdx"],
   turbopack: {
     rules: {

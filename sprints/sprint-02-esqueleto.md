@@ -33,7 +33,7 @@ Diseño final de páginas, integración con WooCommerce, formularios funcionales
 
 - [x] **S2-11** `generateMetadata` en toda ruta, con título y descripción propios.
 - [x] **S2-12** Imágenes Open Graph generadas dinámicamente con la marca.
-- [ ] **S2-13** Datos estructurados: `Organization` y `LocalBusiness` en el layout raíz, `Person` en la página de Juan Carlos Simó. _Organization y LocalBusiness listos en el layout raíz; Person se agrega con la página de Juan Carlos Simó en el Sprint 3._
+- [x] **S2-13** Datos estructurados: `Organization` y `LocalBusiness` en el layout raíz, `Person` en la página de Juan Carlos Simó. 
 - [x] **S2-14** Sitemap alimentado desde las rutas reales y el contenido publicado.
 - [x] **S2-15** URLs canónicas en todas las páginas.
 

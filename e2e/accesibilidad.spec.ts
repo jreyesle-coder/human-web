@@ -1,7 +1,17 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-export const RUTAS_AXE = ["/ui"];
+export const RUTAS_AXE = [
+  "/ui",
+  "/",
+  "/metodo",
+  "/metodo/reparar",
+  "/juan-carlos-simo",
+  "/historias",
+  "/contenido",
+  "/contenido/articulo-ejemplo",
+  "/contacto",
+];
 
 for (const ruta of RUTAS_AXE) {
   test(`axe no reporta violaciones en ${ruta}`, async ({ page }) => {
