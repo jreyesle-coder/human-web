@@ -21,6 +21,10 @@ jobs:
       - run: pnpm install --frozen-lockfile
       - run: pnpm check
       - run: pnpm build
+      - name: Diagnóstico de acceso a la tienda real
+        run: |
+          r=$(curl -s -o /tmp/woo -w "%{http_code} %{content_type}" "https://humanstores.com/wp-json/wc/store/v1/products?per_page=1" || echo "sin-respuesta")
+          echo "::notice title=Store API desde GitHub::$r $(head -c 60 /tmp/woo 2>/dev/null | tr -d '[:cntrl:]')"
 
   e2e:
     runs-on: ubuntu-latest

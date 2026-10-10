@@ -18,7 +18,8 @@ export default defineConfig({
     { name: "escritorio", use: { ...devices["Desktop Chrome"] } },
   ],
   webServer: {
-    command: `pnpm build && pnpm start -p ${port}`,
+    // Compila contra una Store API simulada con una copia fija del catálogo (e2e/servidor.mjs).
+    command: "node e2e/servidor.mjs",
     url: `http://localhost:${port}`,
     reuseExistingServer: !process.env.CI,
     timeout: 240_000,
