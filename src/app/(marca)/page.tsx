@@ -119,12 +119,10 @@ export default async function Home() {
         title="Recibe lo nuevo del método"
         intro={
           <>
-            <p>Te escribimos cuando publicamos un artículo o un protocolo nuevo. Nada más.</p>
-            <Pendiente
-              as="linea"
-              texto="frecuencia y contenido del boletín (cliente)"
-              className="mt-2 inline-block text-small"
-            />
+            <p>
+              Protocolos cada semana: sueño, longevidad y rendimiento. Es la promesa del boletín
+              actual de Human Stores.
+            </p>
           </>
         }
       >

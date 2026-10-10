@@ -95,7 +95,7 @@ sprints/                    # plan de trabajo
 
 ## Estado actual
 
-- Sprint activo: **S2** — corrida continua S1 a S6 acordada con Julio (2026-10-10). S0 cerrado salvo S0-05 (accesos del cliente).
+- Sprints S0 a S6 entregados (2026-10-10). **Siguiente: S7 (pago y migración), bloqueado** hasta tener el dominio (P-001) y los accesos de WordPress (B-004). Lo que falta del cliente está en `docs/materiales-pendientes.md`.
 - El despliegue de Vercel es el sitio de presentación: sin `HUMAN_LANZAMIENTO=si` muestra borradores y pendientes (D-008).
 - Sitio heredado: `humanstores.com` — WordPress + WooCommerce con tema comercial, implementación sin terminar. No se toca hasta el Sprint 7.
 - Decisiones de cliente pendientes: ver `docs/03-stack-y-decisiones.md`, sección "Pendientes".

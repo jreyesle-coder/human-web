@@ -15,6 +15,8 @@ Lo que impide avanzar y no se resuelve del lado técnico.
 
 ## Contenido pendiente del cliente
 
+> Lista consolidada y vigente, con responsable sugerido: **`docs/materiales-pendientes.md`** (44 piezas). La tabla de abajo es la original del plan.
+
 Se llena con la salida de `pnpm pendientes` al cerrar el Sprint 2. Es la causa más frecuente de retraso en este tipo de proyecto, así que cada línea necesita responsable y fecha.
 
 | Pieza | Tipo | Responsable | Fecha comprometida | Estado |
@@ -55,7 +57,6 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | (componente compartido) | Texto | horarios de Human Balance, consultorio y tienda | `src/components/blocks/ContactStrip.tsx:70` |
 | (componente compartido) | Texto | horarios de atención por unidad | `src/components/blocks/Footer.tsx:37` |
 | (componente compartido) | Texto | enlaces oficiales a redes sociales | `src/components/blocks/Footer.tsx:67` |
-| / | Texto | frecuencia y contenido del boletín (cliente) | `src/app/(marca)/page.tsx:123` |
 | / | Texto | promesa de portada aprobada por Juan Carlos Simó: a quién sirve y qué resuelve, en una frase | `src/app/(marca)/page.tsx:41` |
 | / | Texto | historias con resultados concretos y autorización firmada (cliente) | `src/app/(marca)/page.tsx:89` |
 | /aviso-legal | Texto | aviso legal vigente, migrado desde humanstores.com/aviso-legal | `src/app/(legal)/aviso-legal/page.tsx:16` |
@@ -121,11 +122,19 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /sanar/motivos/sueno | Texto | sueño: qué esperar del proceso, sin promesas de resultado | `content/motivos/sueno.mdx:26` |
 | /sanar/primera-consulta | Texto | primera consulta: ${m.toLowerCase()} (consultorio) | `src/app/sanar/primera-consulta/page.tsx:45` |
 | /terminos | Texto | términos y condiciones vigentes del cliente (revisión legal) | `src/app/(legal)/terminos/page.tsx:16` |
-| /tienda | Texto | catálogo conectado a WooCommerce (Sprint 6) | `src/app/tienda/page.tsx:25` |
-| /tienda/carrito | Texto | carrito (Sprint 6) | `src/app/tienda/carrito/page.tsx:25` |
-| /tienda/omni | Texto | historia y respaldo de la línea OMNI (cliente) | `src/app/tienda/omni/page.tsx:24` |
-| /tienda/productos | Texto | catálogo con filtros (Sprint 6) | `src/app/tienda/productos/page.tsx:24` |
-| /tienda/protocolos | Texto | índice de protocolos (Sprint 6) | `src/app/tienda/protocolos/page.tsx:25` |
+| /tienda/omni | Texto | historia, criterio de formulación y respaldo de la línea OMNI (cliente) | `src/app/tienda/omni/page.tsx:40` |
+| /tienda/omni | Texto | asignar la marca OMNI en WooCommerce a todos sus productos: hoy solo uno la tiene (cliente) | `src/app/tienda/omni/page.tsx:61` |
+| /tienda/productos | Texto | filtro por sistema del cuerpo: falta la clasificación de cada producto en WooCommerce (cliente) | `src/app/tienda/productos/page.tsx:58` |
+| /tienda/productos/[slug] | Texto | ${p.nombre}: para qué sirve (cliente) | `src/app/tienda/productos/[slug]/page.tsx:196` |
+| /tienda/productos/[slug] | Texto | ${p.nombre}: dosis indicada | `src/app/tienda/productos/[slug]/page.tsx:204` |
+| /tienda/productos/[slug] | Texto | ${p.nombre}: días que rinde el envase según la dosis | `src/app/tienda/productos/[slug]/page.tsx:213` |
+| /tienda/productos/[slug] | Texto | ${p.nombre}: qué esperar, sin promesas de resultado | `src/app/tienda/productos/[slug]/page.tsx:221` |
+| /tienda/productos/[slug] | Texto | ${p.nombre}: ingredientes y cantidades por porción (cliente) | `src/app/tienda/productos/[slug]/page.tsx:238` |
+| /tienda/productos/[slug] | Texto | certificaciones de ${p.nombre} | `src/app/tienda/productos/[slug]/page.tsx:251` |
+| /tienda/productos/[slug] | Texto | país de fabricación de ${p.nombre} | `src/app/tienda/productos/[slug]/page.tsx:252` |
+| /tienda/productos/[slug] | Texto | preguntas frecuentes de ${p.nombre} | `src/app/tienda/productos/[slug]/page.tsx:269` |
+| /tienda/protocolos/[slug] | Texto | preguntas frecuentes del protocolo ${entry.frontmatter.title} (Juan Carlos Simó) | `src/app/tienda/protocolos/[slug]/page.tsx:131` |
+| /tienda/protocolos/[slug] | Texto | productos del protocolo ${entry.frontmatter.title}: etiquetarlos con "${entry.frontmatter.wooTag}" en WooCommerce (cliente) | `src/app/tienda/protocolos/[slug]/page.tsx:80` |
 | /tienda/protocolos/estres-y-sueno-cronico | Texto | narrativa del protocolo Estrés y Sueño Crónico: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/estres-y-sueno-cronico.mdx:12` |
 | /tienda/protocolos/fat-loss | Texto | narrativa del protocolo Fat Loss: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/fat-loss.mdx:12` |
 | /tienda/protocolos/higado | Texto | narrativa del protocolo Hígado: para quién es, cómo se toma, por cuánto tiempo, qué esperar y qué no es (Juan Carlos Simó) | `content/protocolos/higado.mdx:12` |

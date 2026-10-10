@@ -17,49 +17,49 @@ Requiere S0-01 verificado. Si la Store API no responde, este sprint está bloque
 
 ### Capa de datos
 
-- [ ] **S6-01** Cliente de WooCommerce Store API en `src/lib/woo/` con tipos propios, no los del API en crudo.
-- [ ] **S6-02** Funciones de catálogo: listar productos, obtener por slug, listar por etiqueta, listar categorías.
-- [ ] **S6-03** Caché con revalidación: productos cada 10 minutos, existencias en cada petición.
-- [ ] **S6-04** Manejo de fallo del API: página de catálogo degradada con aviso, nunca una pantalla en blanco.
-- [ ] **S6-05** Mapeo de las etiquetas de protocolo existentes en WooCommerce a los slugs de `docs/01-arquitectura-informacion.md`.
+- [x] **S6-01** Cliente de WooCommerce Store API en `src/lib/woo/` con tipos propios, no los del API en crudo.
+- [x] **S6-02** Funciones de catálogo: listar productos, obtener por slug, listar por etiqueta, listar categorías.
+- [x] **S6-03** Caché con revalidación: productos cada 10 minutos, existencias en cada petición.
+- [x] **S6-04** Manejo de fallo del API: página de catálogo degradada con aviso, nunca una pantalla en blanco.
+- [x] **S6-05** Mapeo de las etiquetas de protocolo existentes en WooCommerce a los slugs de `docs/01-arquitectura-informacion.md`.
 
 ### Protocolos — la entrada principal
 
-- [ ] **S6-06** `/tienda` con los protocolos como primera decisión, no una cuadrícula de productos.
-- [ ] **S6-07** `/tienda/protocolos` — índice con objetivo de cada uno.
-- [ ] **S6-08** `/tienda/protocolos/[slug]` — plantilla que combina narrativa en MDX con los productos que vienen de Woo.
-- [ ] **S6-09** Estructura de la página de protocolo: para quién es, qué incluye, cómo se toma, por cuánto tiempo, qué esperar, qué no es.
-- [ ] **S6-10** Botón de agregar el protocolo completo al carrito en un solo paso.
-- [ ] **S6-11** Crear los cinco MDX de protocolo con narrativa en placeholder.
-- [ ] **S6-12** Enlace cruzado: cada protocolo apunta al motivo de consulta relacionado en `/sanar`.
+- [x] **S6-06** `/tienda` con los protocolos como primera decisión, no una cuadrícula de productos.
+- [x] **S6-07** `/tienda/protocolos` — índice con objetivo de cada uno.
+- [x] **S6-08** `/tienda/protocolos/[slug]` — plantilla que combina narrativa en MDX con los productos que vienen de Woo.
+- [x] **S6-09** Estructura de la página de protocolo: para quién es, qué incluye, cómo se toma, por cuánto tiempo, qué esperar, qué no es.
+- [x] **S6-10** Botón de agregar el protocolo completo al carrito en un solo paso.
+- [x] **S6-11** Crear los cinco MDX de protocolo con narrativa en placeholder.
+- [x] **S6-12** Enlace cruzado: cada protocolo apunta al motivo de consulta relacionado en `/sanar`.
 
 ### Catálogo y producto
 
-- [ ] **S6-13** `/tienda/productos` con filtros por objetivo, sistema del cuerpo y formato.
-- [ ] **S6-14** Buscador del catálogo.
-- [ ] **S6-15** `/tienda/productos/[slug]` — ficha nueva con la estructura: **para qué sirve · cómo se toma · por cuánto tiempo · qué esperar · qué contiene**.
-- [ ] **S6-16** Bloque de duración: cuántos días rinde el envase según la dosis indicada.
-- [ ] **S6-17** Protocolos a los que pertenece el producto, como enlaces.
-- [ ] **S6-18** Producto agotado manejado con elegancia: aviso claro y alternativa sugerida, no un botón muerto.
-- [ ] **S6-19** `/tienda/omni` — página de marca de la línea propia.
+- [x] **S6-13** `/tienda/productos` con filtros por objetivo, sistema del cuerpo y formato.
+- [x] **S6-14** Buscador del catálogo.
+- [x] **S6-15** `/tienda/productos/[slug]` — ficha nueva con la estructura: **para qué sirve · cómo se toma · por cuánto tiempo · qué esperar · qué contiene**.
+- [x] **S6-16** Bloque de duración: cuántos días rinde el envase según la dosis indicada.
+- [x] **S6-17** Protocolos a los que pertenece el producto, como enlaces.
+- [x] **S6-18** Producto agotado manejado con elegancia: aviso claro y alternativa sugerida, no un botón muerto.
+- [x] **S6-19** `/tienda/omni` — página de marca de la línea propia.
 
 ### Confianza
 
-- [ ] **S6-20** Bloque de señales de confianza reutilizable: ingredientes, certificaciones, origen. **Solo datos reales**; lo que no exista va en placeholder.
-- [ ] **S6-21** Reseñas verificadas en ficha de producto, si la fuente existe. Si no, registrar como pendiente y no simular.
-- [ ] **S6-22** Preguntas frecuentes por producto y por protocolo, con datos estructurados `FAQPage`.
-- [ ] **S6-23** Aviso de alcance: ventas solo en República Dominicana, visible antes del carrito.
+- [x] **S6-20** Bloque de señales de confianza reutilizable: ingredientes, certificaciones, origen. **Solo datos reales**; lo que no exista va en placeholder.
+- [ ] **S6-21** Reseñas verificadas en ficha de producto, si la fuente existe. Si no, registrar como pendiente y no simular. _La tienda actual no tiene reseñas. La ficha muestra el bloque como pendiente; no se simula nada. Decide el cliente si las habilita._
+- [x] **S6-22** Preguntas frecuentes por producto y por protocolo, con datos estructurados `FAQPage`.
+- [x] **S6-23** Aviso de alcance: ventas solo en República Dominicana, visible antes del carrito.
 
 ### Carrito
 
-- [ ] **S6-24** Estado de carrito del lado del cliente, persistente entre sesiones.
-- [ ] **S6-25** Panel lateral de carrito con resumen y edición de cantidades.
-- [ ] **S6-26** `/tienda/carrito` con resumen completo y costo de envío visible antes de ir a pagar.
+- [x] **S6-24** Estado de carrito del lado del cliente, persistente entre sesiones.
+- [x] **S6-25** Panel lateral de carrito con resumen y edición de cantidades.
+- [x] **S6-26** `/tienda/carrito` con resumen completo y costo de envío visible antes de ir a pagar.
 
 ### SEO y medición
 
-- [ ] **S6-27** Datos estructurados `Product` con precio y disponibilidad reales.
-- [ ] **S6-28** Eventos de comercio: ver producto, agregar al carrito, ver carrito, agregar protocolo completo.
+- [x] **S6-27** Datos estructurados `Product` con precio y disponibilidad reales.
+- [x] **S6-28** Eventos de comercio: ver producto, agregar al carrito, ver carrito, agregar protocolo completo.
 
 ## Criterios de aceptación
 

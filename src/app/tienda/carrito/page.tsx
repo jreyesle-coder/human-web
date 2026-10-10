@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { PageHeader } from "@/components/blocks/PageHeader";
 import { Section } from "@/components/blocks/Section";
-import { Pendiente } from "@/components/ui/Pendiente";
+import { CartPage } from "@/components/shop/CartPage";
 import { metaPagina } from "@/lib/seo";
 
 export const metadata: Metadata = metaPagina({
@@ -12,17 +12,17 @@ export const metadata: Metadata = metaPagina({
   noindex: true,
 });
 
-export default function Page() {
+export default function CarritoPage() {
   return (
     <main>
       <PageHeader
         path="/tienda/carrito"
         eyebrow="Human Stores"
         title="Tu carrito"
-        lead="Revisa tu pedido antes de pagar."
+        lead="Revisa tu pedido y el costo de envío antes de pagar."
       />
-      <Section>
-        <Pendiente texto="carrito (Sprint 6)" />
+      <Section tone="mist">
+        <CartPage />
       </Section>
     </main>
   );

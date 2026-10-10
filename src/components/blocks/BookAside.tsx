@@ -2,7 +2,7 @@ import Link from "next/link";
 import { LIBRO } from "@/lib/marca";
 
 /** El libro como pieza de soporte, nunca como protagonista (S3-13). */
-export function BookAside({ href = "/tienda/productos" }: { href?: string }) {
+export function BookAside({ href = `/tienda/productos/${LIBRO.slugProducto}` }: { href?: string }) {
   return (
     <aside className="rounded-lg border-2 border-line bg-surface p-5">
       <p className="text-small font-semibold tracking-widest text-stone uppercase">

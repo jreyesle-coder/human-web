@@ -166,6 +166,25 @@ Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight 
 
 ---
 
+## D-013 · Tienda: catálogo vivo, protocolos por etiqueta y envío estimado
+
+**Contexto.** S6 pide catálogo real desde WooCommerce, protocolos como entrada principal, existencias al momento, tolerancia a fallos del API y costo de envío antes de pagar.
+
+**Decisión.**
+- `src/lib/woo` traduce la Store API a tipos propios (`Producto`, `Categoria`). El resto del sitio nunca ve la respuesta cruda.
+- El catálogo completo se cachea 10 minutos con `"use cache"`. La existencia de la ficha se consulta sin caché dentro de un `<Suspense>`.
+- Si el API falla, el error se captura dentro de la caché, se recuerda 2 minutos y cada página muestra un aviso en lugar de quedar en blanco. Probado apagando el API a propósito: `/tienda`, `/tienda/productos`, un protocolo y OMNI respondieron 200 con el aviso.
+- Un protocolo = un MDX (narrativa) + la etiqueta de WooCommerce que agrupa sus productos (`wooTag`). "Agregar protocolo completo" mete en el carrito todos los productos disponibles de esa etiqueta.
+- El carrito vive en el navegador (`localStorage`), sincronizado entre pestañas.
+- El envío se estima con las tarifas publicadas en la política de entrega vigente: RD$150 en la zona metropolitana (gratis desde RD$15,000), RD$400 al interior y RD$500 al interior con proteínas. El costo final lo confirma el pago.
+- El botón "Ir a pagar" queda deshabilitado hasta el Sprint 7 (traspaso del carrito a WooCommerce).
+
+**Alternativas.** Mapear protocolos a mano en el MDX (lista de productos fija): se desactualiza cuando la tienda cambia. Se prefirió que el cliente controle la composición desde WordPress.
+
+**Consecuencias.** La calidad de los protocolos depende del etiquetado en WooCommerce, que hoy está incompleto (lista de materiales, ítem 28). Las fotos de producto se sirven desde la CDN de Jetpack de la tienda actual (`i0.wp.com`).
+
+---
+
 ## Pendientes — bloquean el arranque
 
 Estas tres se cierran en el Sprint 0. No las resuelvas por tu cuenta.

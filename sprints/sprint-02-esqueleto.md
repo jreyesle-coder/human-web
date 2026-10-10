@@ -41,7 +41,7 @@ Diseño final de páginas, integración con WooCommerce, formularios funcionales
 
 - [x] **S2-16** Componente `Pendiente` que renderiza `{{PENDIENTE: ...}}` de forma visible en desarrollo y preview, y **rompe el build en producción**.
 - [x] **S2-17** Script `pnpm pendientes` que recorre el repositorio y lista todo lo pendiente con su ruta. Exportar a `backlog.md`.
-- [ ] **S2-18** Generar el inventario de contenido faltante y entregarlo al cliente como lista de materiales a producir, con responsable y fecha. _La lista de materiales se genera al cierre de la corrida (Sprint 6), cuando los pendientes técnicos ya estén resueltos y solo quede lo del cliente._
+- [x] **S2-18** Generar el inventario de contenido faltante y entregarlo al cliente como lista de materiales a producir, con responsable y fecha.  _Entregado en docs/materiales-pendientes.md (44 piezas con responsable sugerido)._
 
 ## Criterios de aceptación
 

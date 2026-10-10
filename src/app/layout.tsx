@@ -3,6 +3,7 @@ import { Archivo, Source_Sans_3 } from "next/font/google";
 import { BottomBar } from "@/components/blocks/BottomBar";
 import { Footer } from "@/components/blocks/Footer";
 import { Header } from "@/components/blocks/Header";
+import { CartDrawer } from "@/components/shop/CartDrawer";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { ToastProvider } from "@/components/ui/Toast";
 import { UBICACION } from "@/lib/marca";
@@ -109,6 +110,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           </div>
           <Footer />
           <BottomBar />
+          <CartDrawer />
         </ToastProvider>
         <OrganizationSchema />
       </body>

@@ -1,6 +1,6 @@
 import { expect, test } from "@playwright/test";
 
-const MIN_PAGINAS = 15;
+const MIN_PAGINAS = 60;
 
 // Rastreador: recorre todo enlace interno alcanzable desde la portada y verifica que ninguno esté roto.
 test("no hay enlaces internos rotos", async ({ page, request }) => {
