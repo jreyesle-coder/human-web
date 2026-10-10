@@ -96,6 +96,12 @@ export const claseDePruebaSchema = z.object({
   correo,
   objetivo: z.enum(valores(OBJETIVOS_ENTRENAMIENTO), { error: "Escoge tu objetivo general." }),
   disponibilidad: z.enum(valores(DISPONIBILIDAD), { error: "Escoge un horario aproximado." }),
+  /** Coach elegido desde su perfil, si llegó por ahí. */
+  coach: z
+    .string()
+    .regex(/^[a-z0-9-]*$/)
+    .max(60)
+    .optional(),
   consentimiento,
   ...comunes,
 });

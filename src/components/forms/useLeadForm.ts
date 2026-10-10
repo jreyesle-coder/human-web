@@ -29,15 +29,21 @@ export function useLeadForm<S extends z.ZodType>({
   endpoint,
   formulario,
   alEnviar,
+  extra,
 }: {
   schema: S;
   endpoint: string;
   formulario: string;
   alEnviar?: () => void;
+  /** Datos adicionales que se agregan al enviar (no son campos visibles). */
+  extra?: () => Record<string, unknown>;
 }) {
   const [estado, setEstado] = useState<Estado>("inicial");
   const [errores, setErrores] = useState<Record<string, string>>({});
-  const [token, setToken] = useState("");
+  const token = useRef("");
+  const setToken = useCallback((t: string) => {
+    token.current = t;
+  }, []);
   const iniciado = useRef(false);
 
   useEffect(() => {
@@ -58,7 +64,7 @@ export function useLeadForm<S extends z.ZodType>({
     form.querySelectorAll<HTMLInputElement>("input[type=checkbox]").forEach((c) => {
       datos[c.name] = c.checked;
     });
-    datos.token = token;
+    Object.assign(datos, extra?.());
     datos.origen = leerOrigen();
 
     const local = schema.safeParse(datos);
@@ -74,6 +80,9 @@ export function useLeadForm<S extends z.ZodType>({
 
     setEstado("enviando");
     setErrores({});
+    // Si la persona fue más rápida que el reto anti-spam, se espera hasta 8 s a que entregue el token.
+    for (let i = 0; i < 40 && !token.current; i++) await new Promise((r) => setTimeout(r, 200));
+    datos.token = token.current;
     try {
       const res = await fetch(endpoint, {
         method: "POST",

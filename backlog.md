@@ -62,13 +62,18 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /contenido | Texto | artículos publicados (Juan Carlos Simó / equipo de contenido) | `src/app/(marca)/contenido/page.tsx:28` |
 | /contenido | Texto | enlace al canal oficial de video (cliente) | `src/app/(marca)/contenido/page.tsx:86` |
 | /contenido/articulo-ejemplo | Texto | artículos reales para la sección de contenido (Juan Carlos Simó / equipo de contenido) | `content/contenido/articulo-ejemplo.mdx:9` |
-| /entrenar | Texto | propuesta de Human Balance y fotografía de entrenamiento (cliente) | `src/app/entrenar/page.tsx:28` |
-| /entrenar/clase-de-prueba | Texto | formulario de clase de prueba (Sprint 4) | `src/app/entrenar/clase-de-prueba/page.tsx:26` |
-| /entrenar/coaches | Texto | fotografía y perfil de cada coach (cliente) | `src/app/entrenar/coaches/page.tsx:27` |
+| /entrenar | Imagen | fotografía de entrenamiento en Human Balance | `src/app/entrenar/page.tsx:66` |
+| /entrenar | Texto | propuesta de Human Balance en palabras del equipo, validada por Juan Carlos Simó | `src/app/entrenar/page.tsx:87` |
+| /entrenar/clase-de-prueba/gracias | Texto | tiempo de respuesta comprometido por Human Balance (por ejemplo, en menos de un día laborable) | `src/app/entrenar/clase-de-prueba/gracias/page.tsx:31` |
+| /entrenar/coaches | Texto | fotografía y perfil de cada coach del equipo (Human Balance) | `src/app/entrenar/coaches/page.tsx:43` |
 | /entrenar/coaches/coach-ejemplo | Imagen | retrato del coach | `content/coaches/coach-ejemplo.mdx:10` |
 | /entrenar/coaches/coach-ejemplo | Texto | perfil de cada coach: especialidad, formación y enfoque (Human Balance) | `content/coaches/coach-ejemplo.mdx:12` |
-| /entrenar/instalaciones | Texto | fotografía de instalaciones y horarios (cliente) | `src/app/entrenar/instalaciones/page.tsx:28` |
-| /entrenar/modalidades | Texto | lista de modalidades y en qué se diferencian (Human Balance) | `src/app/entrenar/modalidades/page.tsx:27` |
+| /entrenar/instalaciones | Imagen | área de entrenamiento | `src/app/entrenar/instalaciones/page.tsx:35` |
+| /entrenar/instalaciones | Imagen | área de evaluación | `src/app/entrenar/instalaciones/page.tsx:36` |
+| /entrenar/instalaciones | Imagen | fachada y acceso | `src/app/entrenar/instalaciones/page.tsx:37` |
+| /entrenar/instalaciones | Texto | horario de Human Balance por día de la semana | `src/app/entrenar/instalaciones/page.tsx:44` |
+| /entrenar/instalaciones | Texto | dirección exacta con número y referencia | `src/app/entrenar/instalaciones/page.tsx:53` |
+| /entrenar/modalidades | Texto | lista de modalidades de Human Balance con nombre y descripción (Human Balance) | `src/app/entrenar/modalidades/page.tsx:35` |
 | /historias | Texto | historias con autorización firmada: punto de partida, proceso y resultado (cliente) | `src/app/(marca)/historias/page.tsx:41` |
 | /juan-carlos-simo | Texto | enlaces oficiales a la cobertura del libro (Diario Libre, Listín Diario, El Caribe, Hoy) y a podcasts (cliente) | `src/app/(marca)/juan-carlos-simo/page.tsx:115` |
 | /juan-carlos-simo | Imagen | fotografía oficial de Juan Carlos Simó | `src/app/(marca)/juan-carlos-simo/page.tsx:57` |
@@ -131,6 +136,8 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 |---|---|---|---|
 | DT-001 | Salto visual entre el catálogo nuevo y el checkout de WooCommerce | D-003 | Tras 3 meses en operación, con datos de abandono |
 | DT-002 | Publicar contenido requiere un commit | D-004 | Si el cliente publica más de una vez por semana |
+| DT-003 | Límite de intentos de formularios en memoria, por instancia de Vercel | D-012 | Si aparece spam que pase Turnstile |
+| DT-004 | Las solicitudes solo quedan en el correo del equipo, sin historial consultable | D-012 | Si el cliente pide reportes de solicitudes |
 
 ## Ideas fuera de alcance
 

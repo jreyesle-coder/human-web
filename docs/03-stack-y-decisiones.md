@@ -147,6 +147,25 @@ Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight 
 
 ---
 
+## D-012 · Formularios: un solo flujo para todos
+
+**Contexto.** El boletín (S3), la clase de prueba (S4) y la evaluación (S5) comparten requisitos: validación igual en cliente y servidor, anti-spam, límite de intentos, correos, consentimiento y trazabilidad del origen.
+
+**Decisión.**
+- Esquemas Zod en `src/lib/forms/schemas.ts`, usados por el formulario y por la ruta `POST /api/leads/*`.
+- `procesarLead()` aplica, en orden: límite de intentos por IP, validación, campo trampa, verificación de Turnstile en servidor y envío de correos.
+- Correos por la API de Resend con `fetch`, sin SDK (una dependencia menos). Sin `RESEND_API_KEY`, el envío se acepta y se reporta `correo: "no-configurado"`; en el sitio lanzado eso es un error.
+- Turnstile usa las llaves de prueba públicas de Cloudflare mientras no se lance; en el lanzamiento exige las reales.
+- El origen (página, referente y parámetros `utm_*`) viaja en el cuerpo del envío, nunca en la URL.
+- La analítica solo acepta una lista cerrada de propiedades: ni nombre, ni correo, ni motivo de consulta.
+- Si la persona envía antes de que el reto anti-spam termine, el formulario espera hasta 8 segundos por el token en lugar de fallar.
+
+**Alternativas.** Server Actions (menos control del código de estado HTTP y de las pruebas de la API); un servicio de formularios externo (los datos personales saldrían a un tercero más).
+
+**Consecuencias.** El límite de intentos vive en memoria por instancia (DT-003). No se guarda copia de las solicitudes en base de datos: el registro es el correo al equipo. Si el cliente quiere un historial consultable, se agrega un almacén.
+
+---
+
 ## Pendientes — bloquean el arranque
 
 Estas tres se cierran en el Sprint 0. No las resuelvas por tu cuenta.
