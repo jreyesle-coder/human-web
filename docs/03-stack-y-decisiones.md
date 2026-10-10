@@ -1,0 +1,107 @@
+# Stack y registro de decisiones
+
+Cada decisión técnica de peso se registra aquí. Formato: contexto, decisión, alternativas, consecuencias.
+
+---
+
+## D-001 · Un solo sitio, no tres
+
+**Contexto.** El grupo tiene tres unidades. La tentación es un sitio por unidad.
+
+**Decisión.** Un solo dominio, una marca paraguas, tres rutas de entrada.
+
+**Alternativas.** Tres sitios independientes; subdominios por unidad.
+
+**Consecuencias.** El recorrido Evaluación → Protocolo → Entrenamiento + Suplementación queda intacto. La confianza se construye una vez y no tres. A cambio, la navegación tiene que trabajar más para que el visitante no se pierda entre las unidades.
+
+---
+
+## D-002 · Next.js App Router + TypeScript + Tailwind
+
+**Contexto.** Sitio de contenido con comercio, prioridad en móvil y en posicionamiento.
+
+**Decisión.** Next.js 15+ con App Router, TypeScript estricto, Tailwind con tokens CSS.
+
+**Alternativas.** Astro (excelente para contenido, más fricción para carrito y estado); WordPress rediseñado (mantiene el problema actual); Shopify Hydrogen (ata todo al comercio y el 70% del sitio no es tienda).
+
+**Consecuencias.** Renderizado de servidor y estático para las páginas de contenido, cliente solo donde hace falta. Despliegue en Vercel con preview por rama.
+
+---
+
+## D-003 · WooCommerce headless de solo lectura, checkout en Woo
+
+**Contexto.** La tienda actual corre en WooCommerce y **ya tiene pasarela de pago funcionando con verificación 3D Secure**. En República Dominicana, integrar una pasarela local es el punto más lento y riesgoso de cualquier proyecto de comercio.
+
+**Decisión.** El frontend nuevo consume el catálogo vía **WooCommerce Store API** (solo lectura: productos, categorías, etiquetas, precios, existencias). El **checkout se entrega a WooCommerce** mediante handoff del carrito. No se reimplementa el pago.
+
+**Alternativas.**
+- Rehacer la tienda completa en Shopify o Medusa — obliga a re-integrar la pasarela, re-certificar 3D Secure y migrar historial. Alto riesgo, poco retorno en esta etapa.
+- Dejar la tienda tal como está en otro dominio — rompe la marca y el recorrido.
+
+**Consecuencias.** El salto visual entre catálogo y pago hay que mitigarlo: el checkout de Woo se personaliza con los colores y el logotipo del sistema nuevo. Queda como deuda técnica declarada, revisable en una fase posterior.
+
+**Riesgo a vigilar.** Si la Store API está deshabilitada o el tema actual la interfiere, el Sprint 6 se bloquea. **Verificar disponibilidad en el Sprint 0, antes que nada.**
+
+---
+
+## D-004 · Contenido en MDX, no CMS
+
+**Contexto.** El cliente no tiene equipo editorial. El volumen de contenido es moderado y cambia poco.
+
+**Decisión.** MDX versionado en el repositorio.
+
+**Alternativas.** Sanity o Payload (mejor para equipos que publican a diario; sobredimensionado aquí y agrega un costo mensual más).
+
+**Consecuencias.** Publicar requiere un commit. Si el cliente empieza a publicar con frecuencia semanal, se reevalúa.
+
+---
+
+## Pendientes — bloquean el arranque
+
+Estas tres se cierran en el Sprint 0. No las resuelvas por tu cuenta.
+
+### P-001 · Dominio
+¿El ecosistema vive en `humanstores.com`, en un dominio nuevo de marca, o en una estructura con subrutas? Afecta directamente el posicionamiento acumulado de la tienda y el plan de redirecciones del Sprint 7.
+
+### P-002 · Manual de identidad
+¿Existe un manual de marca formal con colores, tipografías y usos del logotipo? Si existe, reemplaza la paleta propuesta en `docs/02-sistema-diseno.md`.
+
+### P-003 · Alcance de Human Balance
+¿La sección incluye reserva de clases con cupos en línea, o solo solicitud de clase de prueba? La primera opción agrega un sprint completo y probablemente un sistema de reservas externo.
+
+---
+
+## Verificaciones técnicas del Sprint 0
+
+Ejecutadas el 2026-10-10 desde fuera (sin credenciales), contra `https://humanstores.com`.
+
+- [x] **¿WooCommerce Store API responde?** Sí. `GET /wp-json/wc/store/v1/products` → **200**, `X-WP-Total: 46`, una sola página con `per_page=100`. Expone nombre, precios (DOP en centavos), existencias, imágenes, categorías, SKU y permalink. CORS expone `Cart-Token`, lo que habilita el handoff de carrito. **D-003 se sostiene.**
+- [x] **¿Qué pasarela está configurada?** `GET /wp-json/wc/store/v1/cart` → `payment_methods: ["e_commerce_azul"]`: **AZUL** (Banco Popular Dominicano), única pasarela activa, moneda DOP. El plugin de Stripe (`wc-stripe/v1`) está instalado pero no ofrecido en el checkout. Confirmar con el cliente que AZUL tiene 3D Secure activo.
+- [x] **¿Cuántos productos activos y con descripción completa?** 46 publicados; 45 con imagen; solo 3 con descripción larga (el texto vive en la descripción corta). Detalle en `docs/inventario-catalogo.md`.
+- [ ] **¿Hay acceso administrativo a WordPress, al hosting y al DNS?** No verificable desde fuera. Hosting y DNS en **SiteGround** (`ns1/ns2.siteground.net`, IP 35.209.173.76). Bloqueo B-004 sigue abierto.
+- [x] **¿Dónde está registrado el dominio?** **GoDaddy** (creado 2023-09-27, vence 2028-09-27). Falta saber qué cuenta lo controla (B-004).
+- [ ] **¿Existe cuenta de analítica?** La portada no carga Google Analytics/GTM ni píxel de Meta. Hay Jetpack Stats y WooCommerce Analytics en el servidor. Preguntar al cliente (B-004).
+
+Otros hallazgos útiles: sitio en Elementor, SEO con Yoast (sitemap en `/sitemap_index.xml`), Wordfence, WP Fusion (sugiere un CRM conectado — preguntar cuál), y el plugin All-in-One WP Migration instalado. Rutas vivas en `docs/rutas-actuales.csv` (125 URLs).
+
+---
+
+## Variables de entorno
+
+Documentar toda nueva en `.env.example` con valor vacío y comentario.
+
+```
+NEXT_PUBLIC_SITE_URL=
+WOO_STORE_API_URL=
+WOO_CHECKOUT_URL=
+RESEND_API_KEY=
+LEAD_NOTIFICATION_EMAIL=
+NEXT_PUBLIC_WHATSAPP_VENTAS=
+NEXT_PUBLIC_WHATSAPP_CONSULTORIO=
+NEXT_PUBLIC_WHATSAPP_ENTRENAMIENTO=
+NEXT_PUBLIC_ANALYTICS_ID=
+TURNSTILE_SECRET_KEY=
+NEXT_PUBLIC_TURNSTILE_SITE_KEY=
+```
+
+**Ninguna credencial real entra al repositorio.** Nunca.
