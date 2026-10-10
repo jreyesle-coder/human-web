@@ -1,0 +1,83 @@
+/*
+ * Fuente única de color, tipografía y espaciado. Ver docs/02-sistema-diseno.md.
+ * Valores provisionales hasta resolver P-002 (manual de identidad).
+ */
+
+@theme {
+  /* Solo existen los colores de marca: la paleta por defecto de Tailwind queda fuera. */
+  --color-*: initial;
+
+  /* Base de marca */
+  --color-ink: #101010;
+  --color-bone: #f4f1ec;
+  --color-surface: #ffffff;
+
+  /* Acentos */
+  --color-functional: #1c5d4c;
+  --color-amber: #b06b2c;
+
+  /* Soporte */
+  --color-stone: #6b6b6b;
+  --color-line: #d9d4cc;
+
+  /* Estados */
+  --color-error: #b42318;
+  --color-success: #067647;
+  --color-warning: #b54708;
+
+  /* Anchos */
+  --container-content: 1200px;
+  --container-reading: 68ch;
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.2, 0, 0, 1);
+  --default-transition-duration: 200ms;
+  --default-transition-timing-function: var(--ease-out);
+}
+
+/* Escala tipográfica: móvil primero, escritorio desde 1024px. */
+:root {
+  --fs-display: 2.25rem; /* 36 */
+  --fs-h1: 1.75rem; /* 28 */
+  --fs-h2: 1.375rem; /* 22 */
+  --fs-h3: 1.125rem; /* 18 */
+  --fs-body: 1rem; /* 16 */
+  --fs-small: 0.875rem; /* 14 */
+  --fs-micro: 0.75rem; /* 12, solo legales */
+
+  --gutter: 1rem; /* 16px fijo en móvil */
+  --tap-min: 2.75rem; /* 44px */
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --fs-display: 4rem; /* 64 */
+    --fs-h1: 2.75rem; /* 44 */
+    --fs-h2: 2rem; /* 32 */
+    --fs-h3: 1.5rem; /* 24 */
+    --fs-body: 1.0625rem; /* 17 */
+  }
+}
+
+@theme inline {
+  --font-display: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --text-display: var(--fs-display);
+  --text-display--line-height: 1.05;
+  --text-h1: var(--fs-h1);
+  --text-h1--line-height: 1.1;
+  --text-h2: var(--fs-h2);
+  --text-h2--line-height: 1.2;
+  --text-h3: var(--fs-h3);
+  --text-h3--line-height: 1.3;
+  --text-body: var(--fs-body);
+  --text-body--line-height: 1.6;
+  --text-small: var(--fs-small);
+  --text-small--line-height: 1.5;
+  --text-micro: var(--fs-micro);
+  --text-micro--line-height: 1.4;
+
+  --spacing-gutter: var(--gutter);
+  --spacing-tap: var(--tap-min);
+}

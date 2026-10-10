@@ -56,6 +56,46 @@ Cada decisión técnica de peso se registra aquí. Formato: contexto, decisión,
 
 ---
 
+## D-005 · Next.js 16 con Cache Components
+
+**Contexto.** El plan pedía Next.js 15+. Al iniciar el repositorio (S0-06, 2026-10-10) la versión estable es la 16.4.
+
+**Decisión.** Next.js 16.4 con `cacheComponents` y `partialPrefetching` activos (valores por defecto del generador), React 19.3, Tailwind 4, TypeScript estricto con `noUncheckedIndexedAccess`.
+
+**Alternativas.** Fijar Next 15 (menos cambios respecto a la documentación pública, pero arranca un proyecto nuevo con una versión ya superada).
+
+**Consecuencias.** Esta versión cambió APIs: antes de usar una función de Next, consultar `node_modules/next/dist/docs/` (lo pide `AGENTS.md`). `pnpm typecheck` corre `next typegen` primero para generar los tipos de rutas (`LayoutProps`, `PageProps`).
+
+---
+
+## D-006 · Contenido: frontmatter con gray-matter + Zod, cuerpo con @next/mdx
+
+**Contexto.** S0-15 a S0-17 piden MDX con frontmatter validado y reglas de visibilidad.
+
+**Decisión.** `src/lib/content` lee `content/<colección>/*.mdx`, valida el frontmatter con Zod (un archivo inválido rompe el build con su ruta) y filtra: en producción solo `published`; en historias, solo `autorizacion: true`, en cualquier entorno. El cuerpo lo compila `@next/mdx` con `remark-frontmatter` para que el YAML no aparezca en la página. Los archivos se importan con el alias `@content/*`.
+
+**“Producción”** es `VERCEL_ENV=production` en Vercel; los previews por rama muestran borradores y no se indexan (`robots` bloquea todo y las páginas llevan `noindex`). Fuera de Vercel, cualquier build de producción.
+
+**Alternativas.** Contentlayer (abandonado); next-mdx-remote (otra capa más para el mismo resultado).
+
+---
+
+## D-007 · Registro de dependencias
+
+| Paquete | Uso | Razón |
+|---|---|---|
+| `@next/mdx`, `@mdx-js/loader`, `@mdx-js/react`, `@types/mdx` | Compilar MDX | Soporte oficial de Next para MDX en Server Components |
+| `remark-frontmatter` | Quitar el YAML del cuerpo | `@next/mdx` no maneja frontmatter |
+| `gray-matter` | Leer el frontmatter | Estándar, sin dependencias de compilación |
+| `zod` | Validación de frontmatter y formularios | Exigido por el stack |
+| `prettier`, `prettier-plugin-tailwindcss`, `eslint-config-prettier` | Formato | S0-07; el plugin ordena clases de Tailwind |
+| `vitest`, `@vitejs/plugin-react`, `jsdom`, `@testing-library/react`, `@testing-library/dom` | Pruebas unitarias | S0-11; jsdom solo en pruebas de componentes |
+| `@playwright/test` | Pruebas de extremo a extremo | S0-11; corre en móvil (Pixel 7) y escritorio |
+
+Tipografías provisionales con `next/font` (sin dependencia nueva): Inter Tight para títulos e Inter para texto, ambas de la lista de candidatas. La elección final es del Sprint 1.
+
+---
+
 ## Pendientes — bloquean el arranque
 
 Estas tres se cierran en el Sprint 0. No las resuelvas por tu cuenta.

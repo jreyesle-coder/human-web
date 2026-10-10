@@ -18,7 +18,7 @@ Contexto completo de marca en `docs/00-marca-y-filosofia.md`. Léelo antes de es
 
 ## Stack
 
-- **Next.js 15+** (App Router), TypeScript estricto
+- **Next.js 16** (App Router, Cache Components), TypeScript estricto — ver D-005 y `AGENTS.md`
 - **Tailwind CSS** con tokens definidos en `src/styles/tokens.css`
 - **MDX** para contenido editorial (`content/`)
 - **WooCommerce Store API** como backend de catálogo (headless de solo lectura)

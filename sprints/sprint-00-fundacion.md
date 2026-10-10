@@ -19,29 +19,29 @@ Diseño visual, contenido, páginas. Aquí no se construye nada que el cliente v
 
 ### Repositorio
 
-- [ ] **S0-06** Inicializar Next.js 15 con App Router, TypeScript estricto y Tailwind.
-- [ ] **S0-07** Configurar ESLint, Prettier y `pnpm check` como script compuesto.
-- [ ] **S0-08** Crear la estructura de carpetas descrita en `CLAUDE.md`.
-- [ ] **S0-09** Crear `src/styles/tokens.css` con los tokens de `docs/02-sistema-diseno.md`. Valores provisionales hasta que se resuelva P-002.
-- [ ] **S0-10** Crear `.env.example` con todas las variables, sin valores.
-- [ ] **S0-11** Configurar Vitest y Playwright con una prueba trivial de cada uno que pase.
-- [ ] **S0-12** CI en GitHub Actions: `pnpm check` + build en cada push.
-- [ ] **S0-13** Conectar el despliegue en Vercel con preview por rama.
-- [ ] **S0-14** Página `/ui` vacía, reservada para el catálogo de componentes del Sprint 1.
+- [x] **S0-06** Inicializar Next.js 15 con App Router, TypeScript estricto y Tailwind.
+- [x] **S0-07** Configurar ESLint, Prettier y `pnpm check` como script compuesto.
+- [x] **S0-08** Crear la estructura de carpetas descrita en `CLAUDE.md`.
+- [x] **S0-09** Crear `src/styles/tokens.css` con los tokens de `docs/02-sistema-diseno.md`. Valores provisionales hasta que se resuelva P-002.
+- [x] **S0-10** Crear `.env.example` con todas las variables, sin valores.
+- [x] **S0-11** Configurar Vitest y Playwright con una prueba trivial de cada uno que pase.
+- [ ] **S0-12** CI en GitHub Actions: `pnpm check` + build en cada push. _Workflow escrito en `.github/workflows/ci.yml`; falta verlo correr en GitHub._
+- [ ] **S0-13** Conectar el despliegue en Vercel con preview por rama. _Requiere el repositorio en GitHub._
+- [x] **S0-14** Página `/ui` vacía, reservada para el catálogo de componentes del Sprint 1.
 
 ### Base de contenido
 
-- [ ] **S0-15** Configurar MDX con la estructura de `content/` y validación de frontmatter con Zod.
-- [ ] **S0-16** Implementar la regla de `status`: solo se renderiza `published` en producción.
-- [ ] **S0-17** Implementar la salvaguarda de historias: sin `autorizacion: true`, no se renderiza.
+- [x] **S0-15** Configurar MDX con la estructura de `content/` y validación de frontmatter con Zod.
+- [x] **S0-16** Implementar la regla de `status`: solo se renderiza `published` en producción.
+- [x] **S0-17** Implementar la salvaguarda de historias: sin `autorizacion: true`, no se renderiza.
 
 ### Base técnica transversal
 
-- [ ] **S0-18** Layout raíz con metadatos por defecto, fuentes y tokens.
-- [ ] **S0-19** `robots.txt` y `sitemap.xml` generados dinámicamente.
-- [ ] **S0-20** Páginas de error 404 y 500 con la marca.
-- [ ] **S0-21** Componente `ImagePlaceholder` con dimensiones configurables.
-- [ ] **S0-22** Utilidad de enlaces a WhatsApp que lee los números de variables de entorno y agrega parámetro de origen.
+- [x] **S0-18** Layout raíz con metadatos por defecto, fuentes y tokens.
+- [x] **S0-19** `robots.txt` y `sitemap.xml` generados dinámicamente.
+- [x] **S0-20** Páginas de error 404 y 500 con la marca.
+- [x] **S0-21** Componente `ImagePlaceholder` con dimensiones configurables.
+- [x] **S0-22** Utilidad de enlaces a WhatsApp que lee los números de variables de entorno y agrega parámetro de origen.
 
 ## Criterios de aceptación
 

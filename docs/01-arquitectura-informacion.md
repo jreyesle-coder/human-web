@@ -71,6 +71,12 @@ Protocolos iniciales (slugs): `estres-y-sueno-cronico`, `inmunidad`, `fat-loss`,
 
 Las políticas existentes de `humanstores.com` se migran como contenido. **No las redactes de cero**: pídelas al cliente o migra el texto vigente, y marca con `{{PENDIENTE: revisión legal}}` cualquier ajuste necesario.
 
+### Internas (no indexables)
+
+| Ruta | Uso |
+|---|---|
+| `/ui` | Catálogo de componentes del sistema de diseño (Sprint 1). `noindex` y bloqueada en `robots.txt`. |
+
 ## Navegación principal
 
 ```
