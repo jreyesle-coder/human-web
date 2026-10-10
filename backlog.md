@@ -84,14 +84,17 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /metodo/reparar | Texto | qué se repara y cómo: texto de Juan Carlos Simó para el paso Reparar | `content/metodo/reparar.mdx:11` |
 | /politica-de-entrega | Texto | política de entrega vigente, migrada desde humanstores.com/politicas-de-entrega | `src/app/(legal)/politica-de-entrega/page.tsx:16` |
 | /politica-de-reembolsos | Texto | política de reembolsos vigente, migrada desde humanstores.com/politicas-de-reembolsos | `src/app/(legal)/politica-de-reembolsos/page.tsx:16` |
-| /privacidad | Texto | aviso de privacidad vigente del cliente, migrado desde humanstores.com/politica-privacidad (revisión legal) | `src/app/(legal)/privacidad/page.tsx:17` |
-| /sanar | Texto | qué es la dietética funcional y en qué se diferencia de una consulta nutricional tradicional (Juan Carlos Simó) | `src/app/sanar/page.tsx:28` |
-| /sanar/agendar | Texto | formulario de agendamiento (Sprint 5) | `src/app/sanar/agendar/page.tsx:26` |
-| /sanar/evaluaciones | Texto | lista completa de evaluaciones disponibles (consultorio) | `src/app/sanar/evaluaciones/page.tsx:28` |
+| /privacidad | Texto | aviso de privacidad vigente del cliente, migrado desde humanstores.com/politica-privacidad, con revisión legal conforme a la Ley No. 172-13 | `src/app/(legal)/privacidad/page.tsx:21` |
+| /privacidad | Texto | responsable del tratamiento, plazo de conservación y canal para ejercer los derechos de acceso, rectificación y cancelación (cliente, revisión legal) | `src/app/(legal)/privacidad/page.tsx:72` |
+| /sanar | Texto | qué es la dietética funcional y en qué se diferencia de una consulta nutricional tradicional, con la respuesta en la primera frase (Juan Carlos Simó) | `src/app/sanar/page.tsx:44` |
+| /sanar/agendar/gracias | Texto | qué traer a la evaluación y cómo prepararse (ayuno, ropa, estudios previos), definido por el consultorio | `src/app/sanar/agendar/gracias/page.tsx:30` |
+| /sanar/agendar/gracias | Texto | tiempo de respuesta comprometido por el consultorio | `src/app/sanar/agendar/gracias/page.tsx:31` |
+| /sanar/evaluaciones | Texto | lista completa de evaluaciones disponibles además de OligoScan (consultorio) | `src/app/sanar/evaluaciones/page.tsx:46` |
 | /sanar/evaluaciones/oligoscan | Texto | OligoScan: qué mide, en lenguaje llano (Juan Carlos Simó) | `content/evaluaciones/oligoscan.mdx:12` |
 | /sanar/evaluaciones/oligoscan | Texto | OligoScan: cómo se hace | `content/evaluaciones/oligoscan.mdx:16` |
 | /sanar/evaluaciones/oligoscan | Texto | OligoScan: duración | `content/evaluaciones/oligoscan.mdx:20` |
 | /sanar/evaluaciones/oligoscan | Texto | OligoScan: qué recibe el paciente | `content/evaluaciones/oligoscan.mdx:24` |
+| /sanar/motivos/[motivo] | Texto | preguntas frecuentes sobre ${entry?.frontmatter.nombre.toLowerCase() ?? "este motivo"}, con respuesta directa (Juan Carlos Simó) | `src/app/sanar/motivos/[motivo]/page.tsx:97` |
 | /sanar/motivos/composicion-corporal | Texto | composición corporal: qué se siente (texto clínico aprobado por Juan Carlos Simó) | `content/motivos/composicion-corporal.mdx:14` |
 | /sanar/motivos/composicion-corporal | Texto | composición corporal: qué puede haber detrás | `content/motivos/composicion-corporal.mdx:18` |
 | /sanar/motivos/composicion-corporal | Texto | composición corporal: cómo se aborda en consulta | `content/motivos/composicion-corporal.mdx:22` |
@@ -116,7 +119,7 @@ _Generado con `pnpm pendientes --backlog`. No editar a mano._
 | /sanar/motivos/sueno | Texto | sueño: qué puede haber detrás | `content/motivos/sueno.mdx:18` |
 | /sanar/motivos/sueno | Texto | sueño: cómo se aborda en consulta | `content/motivos/sueno.mdx:22` |
 | /sanar/motivos/sueno | Texto | sueño: qué esperar del proceso, sin promesas de resultado | `content/motivos/sueno.mdx:26` |
-| /sanar/primera-consulta | Texto | pasos de la primera consulta (consultorio) | `src/app/sanar/primera-consulta/page.tsx:28` |
+| /sanar/primera-consulta | Texto | primera consulta: ${m.toLowerCase()} (consultorio) | `src/app/sanar/primera-consulta/page.tsx:45` |
 | /terminos | Texto | términos y condiciones vigentes del cliente (revisión legal) | `src/app/(legal)/terminos/page.tsx:16` |
 | /tienda | Texto | catálogo conectado a WooCommerce (Sprint 6) | `src/app/tienda/page.tsx:25` |
 | /tienda/carrito | Texto | carrito (Sprint 6) | `src/app/tienda/carrito/page.tsx:25` |

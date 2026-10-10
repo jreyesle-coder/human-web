@@ -48,3 +48,30 @@ test.describe("clase de prueba (S4-19)", () => {
     expect(res.status()).toBe(400);
   });
 });
+
+test.describe("agendar evaluación (S5-23)", () => {
+  test("envía la solicitud sin datos en la URL ni el motivo en la analítica", async ({ page }) => {
+    await turnstileDePrueba(page);
+    await page.goto("/sanar/agendar");
+    // No hay campos de texto libre clínico (S5-12).
+    await expect(page.locator("textarea")).toHaveCount(0);
+    await page.getByLabel("Nombre").fill("Prueba Automatizada");
+    await page.getByLabel("Teléfono").fill("829 555 0000");
+    await page.getByLabel("Correo").fill("prueba@example.com");
+    await page.getByLabel("Motivo general de la consulta").selectOption("sueno");
+    await page.getByLabel("Mañana").check();
+    await page.getByLabel(/Acepto que HUMAN use estos datos/).check();
+    const [respuesta] = await Promise.all([
+      page.waitForResponse("**/api/leads/evaluacion"),
+      page.getByRole("button", { name: "Agendar evaluación" }).last().click(),
+    ]);
+    expect(respuesta.status(), await respuesta.text()).toBe(200);
+    expect(respuesta.request().method()).toBe("POST");
+    expect(respuesta.url()).not.toMatch(/sueno|prueba@example\.com|8295550000/);
+    await expect(page).toHaveURL(/\/sanar\/agendar\/gracias$/);
+    expect(page.url()).not.toMatch(/sueno|prueba/);
+    const eventos = await page.evaluate(() => JSON.stringify(window.dataLayer ?? []));
+    expect(eventos).toContain("formulario_confirmacion");
+    expect(eventos).not.toMatch(/sueno|prueba@example\.com|Automatizada/);
+  });
+});
